@@ -1,7 +1,15 @@
 <!DOCTYPE html>
-<html>
-<body>
-<h1>Hello World</h1>
-<p>Test page please ignore</p>
+<html ng-app="app">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-route.min.js"></script>
+
+    <script src="app/app-module.js"></script>
+    <script src="app/app-config.js"></script>
+    <script src="app/common/services/rsbuddy-exchange-svc.js"></script>
+    <script src="app/common/services/hiscores-svc.js"></script>
+<body ng-controller="TestCtrl as tc">
+<p>Items: {{tc.names}}</p>
+<p>You: {{tc.player}}</p>
 </body>
 </html>
