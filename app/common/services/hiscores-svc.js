@@ -25,7 +25,7 @@
 
         console.log(JSON.stringify(yqlResponse))
 
-        var data = yqlResponse.results;
+        var data = yqlResponse.query.results;
 
         var results = { };
 
