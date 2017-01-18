@@ -13,6 +13,10 @@
         });
     }
 
+    function yqlParseHiscores(response) {
+        return response;
+    }
+
     function Hiscores($http) {
         var _factory = this;
         var _service = { };
@@ -33,7 +37,7 @@
             return $http.get(formatString(_factory.baseUrl, "lord_lothric"), {
 
             }).then(function(response){
-                return response.data.results;
+                return response.data;
             });
         }
 //        _service.getPlayer = function(name) {
