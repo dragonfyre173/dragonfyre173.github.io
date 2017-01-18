@@ -28,11 +28,11 @@
             "Farming", "Runecrafting", "Hunter", "Construction"
         ];
 
-        _factory.baseUrl = "http://services.runescape.com/m=hiscore_oldschool/index_lite.ws?player={0}";
+        _factory.baseUrl = "http://services.runescape.com/m=hiscore_oldschool/index_lite.ws?player=";
 
 
         _service.getPlayer = function(name) {
-            return $http.post('ajax/hiscores.php?user='+name, {
+            return $http.get(_factory.baseUrl+name, {
 
             }).then(function(response){
                 return response.data;
