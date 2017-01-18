@@ -7,14 +7,14 @@
       "experiencePerAction": 186,
       "inputs": [
         {
-          "item": "Green dragon leather",
+          "name": "Green dragon leather",
           "id": 1745,
           "qty": 3
         }
       ],
       "outputs": [
         {
-          "item": "Green d'hide body",
+          "name": "Green d'hide body",
           "id": 1135,
           "qty": 1
         }

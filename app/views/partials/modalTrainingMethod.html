@@ -3,5 +3,53 @@
 </div>
 <div class="modal-body" id="modal-body">
     Requires {{modalCtrl.trainingMethod.level}}<image height="25" width="25" ng-src="img/{{modalCtrl.trainingMethod.skill}}.png"></image>
-Exp. Each: {{modalCtrl.trainingMethod.experiencePerAction}}
+    <div class="panel panel-default">
+        <div class="panel-heading text-center"><h4>Profit/Cost Breakdown</h4></div>
+        <table class="table table-bordered table-striped">
+            <thead>
+            <th class="col-sm-4 text-center">Item</th>
+            <th class="col-sm-2 text-right">Quantity</th>
+            <th class="col-sm-2 text-right" uib-tooltip="RSBuddy Grand Exchange median price. Negative price = input.">Value <span class="glyphicon glyphicon-question-sign pull-right"></span></th>
+            <th class="col-sm-2 text-right">Items per Hour</th>
+            <th class="col-sm-2 text-right">Cost per Hour</th>
+            </thead>
+            <tbody>
+            <tr class="text-right" ng-repeat="item in modalCtrl.trainingMethod.inputs">
+                <td class="text-center"><a target="_blank" href="https://rsbuddy.com/exchange?id={{item.id}}&">{{item.name}}</a></td>
+                <td>{{item.qty | number : 0}}</td>
+                <td class="text-danger">{{-1 * item.price | number : 0}}</td>
+                <td>{{item.qty * modalCtrl.trainingMethod.actionsPerHour | number : 0}}</td>
+                <td class="text-danger">{{-1 * item.price * modalCtrl.trainingMethod.actionsPerHour | number : 0}}</td>
+            </tr>
+            <tr class="text-right" ng-repeat="item in modalCtrl.trainingMethod.outputs">
+                <td class="text-center"><a target="_blank" href="https://rsbuddy.com/exchange?id={{item.id}}&">{{item.name}}</a></td>
+                <td>{{item.qty | number : 0}}</td>
+                <td class="text-success">{{item.price | number : 0}}</td>
+                <td>{{item.qty * modalCtrl.trainingMethod.actionsPerHour | number : 0}}</td>
+                <td class="text-success">{{item.price * modalCtrl.trainingMethod.actionsPerHour | number : 0}}</td>
+            </tr>
+            <tr class="text-right">
+                <td class="text-center"><b>Gross Profit</b></td>
+                <td class="text-center"></td>
+                <td class="text-success">{{modalCtrl.trainingMethod.gross | number : 0}}</td>
+                <td class="text-center"></td>
+                <td class="text-success">{{modalCtrl.trainingMethod.gross * modalCtrl.trainingMethod.actionsPerHour | number : 0}}</td>
+            </tr>
+            <tr class="text-right">
+                <td class="text-center"><b>Costs</b></td>
+                <td class="text-center"></td>
+                <td class="text-danger">{{modalCtrl.trainingMethod.cost | number : 0}}</td>
+                <td class="text-center"></td>
+                <td class="text-danger">{{modalCtrl.trainingMethod.cost * modalCtrl.trainingMethod.actionsPerHour | number : 0}}</td>
+            </tr>
+            <tr class="text-right">
+                <td class="text-center"><b>Net Profit</b></td>
+                <td class="text-center"></td>
+                <td ng-class="{ 'text-danger': modalCtrl.trainingMethod.profit < 0, 'text-success': modalCtrl.trainingMethod.profit > 0 }">{{modalCtrl.trainingMethod.profit | number : 0}}</td>
+                <td class="text-center"></td>
+                <td ng-class="{ 'text-danger': modalCtrl.trainingMethod.profit < 0, 'text-success': modalCtrl.trainingMethod.profit > 0 }">{{modalCtrl.trainingMethod.profit * modalCtrl.trainingMethod.actionsPerHour | number : 0}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 </div>

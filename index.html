@@ -36,7 +36,8 @@
             </div>
             <div class="col-sm-4">
                 <div class="input-group">
-                    <input type="number" class="form-control" placeholder="Input your income (GP/hr)" ng-model="mainCtrl.player.income">
+                    <input type="text" min="0" class="form-control" placeholder="Input your income (GP/hr)" ng-model="mainCtrl.player.income" number-format>
+                    <span class="input-group-addon">GP/hr</span>
                     <span class="input-group-btn">
                         <button class="btn btn-default" type="button" tooltip-placement="bottom" uib-tooltip="Enter your income in GP/hr. Or, in other words, what do you value your time at? For example, if you like to catch anglerfish, you might put 200,000 GP/hr.">
                             <span class="glyphicon glyphicon-question-sign"></span>
@@ -61,22 +62,22 @@
                     <div class="panel-heading text-center"><h4>{{mainCtrl.activeSkill}} Training</h4></div>
                     <table class="table table-striped table-bordered">
                         <thead>
-                            <th class="text-center">Method</th>
-                            <th>Exp</th>
-                            <th>Level</th>
-                            <th>EXP/hr</th>
-                            <th>Profit</th>
-                            <th>GP/xp</th>
-                            <th uib-tooltip="EXP/hr adjusted based on your income. See the about page for how it's calculated.">Effective EXP/hr <span class="glyphicon glyphicon-question-sign pull-right"></span></th>
+                        <th class="col-sm-4 text-center">Method</th>
+                        <th class="col-sm-1 text-right">Exp</th>
+                        <th class="col-sm-1 text-right">Level</th>
+                        <th class="col-sm-1 text-right">Profit</th>
+                        <th class="col-sm-1 text-right">GP/xp</th>
+                        <th class="col-sm-2 text-right">EXP/hr</th>
+                        <th class="col-sm-2 text-right" uib-tooltip="EXP/hr adjusted based on your income. See the about page for how it's calculated."> Effective EXP/hr <span class="glyphicon glyphicon-question-sign"></span></th>
                         </thead>
                         <tbody>
-                            <tr ng-repeat="method in mainCtrl.trainingMethods">
+                            <tr ng-repeat="method in mainCtrl.trainingMethods" class="text-right">
                                 <td class="text-center"> <a href="" ng-click="mainCtrl.detailMethod(method)"><span class="glyphicon glyphicon-info-sign pull-left"></span></a>{{method.name}}</td>
                                 <td>{{method.experiencePerAction | number}}</td>
                                 <td>{{method.level}}</td>
-                                <td>{{method.experiencePerAction * method.actionsPerHour | number}}</td>
                                 <td><span ng-if="method.ready">{{method.profit | number}}</span></td>
                                 <td><span ng-if="method.ready">{{method.profit / method.experiencePerAction | number : 2}}</span></td>
+                                <td>{{method.experiencePerAction * method.actionsPerHour | number}}</td>
                                 <td><span ng-if="method.ready">{{mainCtrl.player.getProductivity(method) | number : 0}}</span></td>
                             </tr>
                         </tbody>

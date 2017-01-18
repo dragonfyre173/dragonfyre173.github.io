@@ -45,6 +45,7 @@
                 templateUrl: 'app/views/partials/modalTrainingMethod.html',
                 controller: 'ModalInstanceCtrl',
                 controllerAs: 'modalCtrl',
+                size: 'lg',
                 resolve: {
                     trainingMethod: function() {
                         return tm;
@@ -57,10 +58,6 @@
             }, function () {
                 $log.info('Modal dismissed at: ' + new Date());
             });
-        };
-
-        _ctrl.getProductivity = function(tm) {
-
         };
 
         function getInOutPrices(tm){
@@ -87,15 +84,19 @@
             return $q.all(promises).then(function(){
                 // All item prices have been retrieved by now
                 tm.profit = 0;
+                tm.gross = 0;
+                tm.cost = 0;
 
                 if("inputs" in tm) {
                     for (var input = 0; input < tm.inputs.length; input++) {
                         tm.profit -= tm.inputs[input].qty * tm.inputs[input].price;
+                        tm.cost -= tm.inputs[input].qty * tm.inputs[input].price;
                     }
                 }
                 if("outputs" in tm) {
                     for (var output = 0; output < tm.outputs.length; output++) {
                         tm.profit += tm.outputs[output].qty * tm.outputs[output].price;
+                        tm.gross += tm.outputs[output].qty * tm.outputs[output].price;
                     }
                 }
 
