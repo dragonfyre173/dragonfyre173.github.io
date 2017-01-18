@@ -23,6 +23,8 @@
             "Farming", "Runecrafting", "Hunter", "Construction"
         ];
 
+        console.log(JSON.stringify(yqlresponse))
+
         var data = yqlResponse.results;
 
         var results = { };
