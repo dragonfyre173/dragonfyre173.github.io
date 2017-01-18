@@ -4,7 +4,7 @@
             //$httpProvider.defaults.useXDomain = true;
             //delete $httpProvider.defaults.headers.common['X-Requested-With'];
             $routeProvider
-                .when('/',{
+                .when('/methods',{
                     templateUrl: 'app/views/partials/tpl-method-overview.html',
                     controller: 'MainController',
                     controllerAs: 'mainCtrl'
@@ -15,7 +15,7 @@
                     controllerAs: 'dbCtrl'
                 })
                 .otherwise({
-                    redirectTo: '/'
+                    redirectTo: '/methods'
                 })
 
         }])

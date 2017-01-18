@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7a9a394f-a2ab-4483-9c8f-a01412e0c064" name="Default" comment="Add">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/controllers/itemdb-ctrl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/partials/tpl-item-database.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/partials/tpl-method-overview.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/views/partials/modalTrainingMethod.html" afterPath="$PROJECT_DIR$/app/views/partials/modal-training-method.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app-config.js" afterPath="$PROJECT_DIR$/app/app-config.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app-module.js" afterPath="$PROJECT_DIR$/app/app-module.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/main-ctrl.js" afterPath="$PROJECT_DIR$/app/controllers/main-ctrl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/rsbuddy-names.json" afterPath="$PROJECT_DIR$/data/rsbuddy-names.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/training-methods.json" afterPath="$PROJECT_DIR$/data/training-methods.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -44,8 +35,8 @@
       <file leaf-file-name="app-config.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/app-config.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="42" lean-forward="false" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
+            <state relative-caret-position="289">
+              <caret line="17" column="41" lean-forward="false" selection-start-line="17" selection-start-column="41" selection-end-line="17" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -54,8 +45,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="28" column="60" lean-forward="false" selection-start-line="28" selection-start-column="60" selection-end-line="28" selection-end-column="60" />
+            <state relative-caret-position="459">
+              <caret line="27" column="41" lean-forward="false" selection-start-line="27" selection-start-column="41" selection-end-line="27" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -233,9 +224,9 @@
         <option value="$PROJECT_DIR$/app/app-module.js" />
         <option value="$PROJECT_DIR$/app/controllers/main-ctrl.js" />
         <option value="$PROJECT_DIR$/app/views/partials/tpl-method-overview.html" />
-        <option value="$PROJECT_DIR$/app/app-config.js" />
         <option value="$PROJECT_DIR$/app/controllers/itemdb-ctrl.js" />
         <option value="$PROJECT_DIR$/app/views/partials/tpl-item-database.html" />
+        <option value="$PROJECT_DIR$/app/app-config.js" />
         <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
@@ -809,12 +800,12 @@
       <workItem from="1484709325396" duration="186000" />
       <workItem from="1484709526167" duration="3905000" />
       <workItem from="1484715575680" duration="8219000" />
-      <workItem from="1484748481559" duration="25862000" />
+      <workItem from="1484748481559" duration="26115000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38172000" />
+    <option name="totallyTimeSpent" value="38425000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-917" y="0" width="924" height="1057" extended-state="0" />
@@ -1101,14 +1092,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/app-config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="42" lean-forward="false" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/services/training-method-svc.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -1197,10 +1180,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/app-config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="41" lean-forward="false" selection-start-line="17" selection-start-column="41" selection-end-line="17" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" column="60" lean-forward="false" selection-start-line="28" selection-start-column="60" selection-end-line="28" selection-end-column="60" />
+        <state relative-caret-position="459">
+          <caret line="27" column="41" lean-forward="false" selection-start-line="27" selection-start-column="41" selection-end-line="27" selection-end-column="41" />
           <folding />
         </state>
       </provider>
