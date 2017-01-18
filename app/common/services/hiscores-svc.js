@@ -23,7 +23,7 @@
             "Farming", "Runecrafting", "Hunter", "Construction"
         ];
 
-        console.log(JSON.stringify(yqlresponse))
+        console.log(JSON.stringify(yqlResponse))
 
         var data = yqlResponse.results;
 
