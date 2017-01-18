@@ -1,6 +1,5 @@
 (function() {
-    angular
-        .module('app')
+    angular.module('app')
         .factory('GrandExchange', ['$http', GrandExchange]);
 
 
@@ -10,7 +9,7 @@
 
         _factory.guide = 'https://api.rsbuddy.com/grandExchange?a=guidePrice&i=';
 
-        _service.getPriceGuide = function(item) {
+        _service.getGuidePrice = function(item) {
             return $http.get(_factory.guide + item).then(function(response) {
                 return response.data;
             });

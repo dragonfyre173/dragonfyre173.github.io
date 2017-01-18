@@ -5,5 +5,11 @@
     <content url="file://$MODULE_DIR$" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="ui-bootstrap" level="application" />
+    <orderEntry type="library" name="angular-touch" level="application" />
+    <orderEntry type="library" name="angular-animate" level="application" />
+    <orderEntry type="library" name="angular-route" level="application" />
+    <orderEntry type="library" name="angular" level="application" />
+    <orderEntry type="library" name="ui-bootstrap-tpls" level="application" />
   </component>
 </module>

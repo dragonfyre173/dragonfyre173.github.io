@@ -1,0 +1,84 @@
+{
+  "Crafting": [
+    {
+      "name": "Green d'hide bodies",
+      "actionsPerHour": 1650,
+      "level": 63,
+      "experiencePerAction": 186,
+      "inputs": [
+        {
+          "item": "Green dragon leather",
+          "id": 1745,
+          "qty": 3
+        }
+      ],
+      "outputs": [
+        {
+          "item": "Green d'hide body",
+          "id": 1135,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "name": "Blue d'hide bodies",
+      "actionsPerHour": 1650,
+      "level": 63,
+      "experiencePerAction": 210,
+      "inputs": [
+        {
+          "item": "Blue dragon leather",
+          "id": 2505,
+          "qty": 3
+        }
+      ],
+      "outputs": [
+        {
+          "item": "Blue d'hide body",
+          "id": 2499,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "name": "Red d'hide bodies",
+      "actionsPerHour": 1650,
+      "level": 63,
+      "experiencePerAction": 234,
+      "inputs": [
+        {
+          "item": "Red dragon leather",
+          "id": 2507,
+          "qty": 3
+        }
+      ],
+      "outputs": [
+        {
+          "item": "Red d'hide body",
+          "id": 2501,
+          "qty": 1
+        }
+      ]
+    },
+    {
+    "name": "Black d'hide bodies",
+    "actionsPerHour": 1650,
+    "level": 63,
+    "experiencePerAction": 258,
+    "inputs": [
+      {
+        "item": "Black dragon leather",
+        "id": 2509,
+        "qty": 3
+      }
+    ],
+    "outputs": [
+      {
+        "item": "Black d'hide body",
+        "id": 2503,
+        "qty": 1
+      }
+    ]
+  }
+  ]
+}
