@@ -5,6 +5,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-animate.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-touch.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-route.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.4.0/ui-bootstrap-tpls.min.js"></script>
 
     <script src="app/app-module.js"></script>
@@ -16,75 +17,20 @@
 
     <script src="app/controllers/main-ctrl.js"></script>
     <script src="app/controllers/modal-ctrl.js"></script>
+    <script src="app/controllers/itemdb-ctrl.js"></script>
 
-
-<body ng-controller="MainController as mainCtrl">
-    <nav class="navbar navbar-default navbar-static-top">
-        <a class="navbar-brand">Efficiency Tool</a>
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand">Efficiency Tool</a>
+                <ul class="nav navbar-nav">
+                    <li><a href="#/">Calculator</a></li>
+                    <li><a href="#items/">Item List</a></li>
+                </ul>
+            </div>
+        </div>
     </nav>
-    <div class="container">
-        <!-- User Input -->
-        <div class="row">
-            <div class="col-sm-2"></div>
-            <div class="col-sm-4">
-                <div class="input-group">
-                    <input type="text" class="form-control" contenteditable="false" placeholder="Hiscore Lookup Not Yet Implemented" ng-submit="mainCtrl.updateStats()" ng-model="mainCtrl.tempName">
-                    <span class="input-group-btn">
-                        <button class="btn btn-default" type="button" ng-click="mainCtrl.updateName()">Update Stats</button>
-                    </span>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="input-group">
-                    <input type="text" min="0" class="form-control" placeholder="Input your income (GP/hr)" ng-model="mainCtrl.player.income" number-format>
-                    <span class="input-group-addon">GP/hr</span>
-                    <span class="input-group-btn">
-                        <button class="btn btn-default" type="button" tooltip-placement="bottom" data-container="body" uib-tooltip="Enter your income in GP/hr. Or, in other words, what do you value your time at? For example, if you like to catch anglerfish, you might put 200,000 GP/hr.">
-                            <span class="glyphicon glyphicon-question-sign"></span>
-                        </button>
-                    </span>
-                </div>
-            </div>
-        </div>
-        <hr/>
-        <!-- Results display -->
-        <div  ng-show="mainCtrl.isReady()">
-            <!-- Skill list toolbar -->
-            <div class="row text-center">
-                <div class="btn-group">
-                    <button ng-repeat="skill in mainCtrl.getSkills()" type="button" class="btn btn-default" ng-class="{ 'active': mainCtrl.isActive(skill) }" ng-click="mainCtrl.setActive(skill)">
-                        <image width="100%" height="100%" ng-src="img/{{skill}}.png">
-                    </button>
-                </div>
-            </div>
-            <div ng-show="mainCtrl.activeSkill">
-                <div class="panel panel-default">
-                    <div class="panel-heading text-center"><h4>{{mainCtrl.activeSkill}} Training</h4></div>
-                    <table class="table table-striped table-bordered">
-                        <thead>
-                        <th class="col-sm-4 text-center">Method</th>
-                        <th class="col-sm-1 text-right">Exp</th>
-                        <th class="col-sm-1 text-right">Level</th>
-                        <th class="col-sm-1 text-right">Profit</th>
-                        <th class="col-sm-1 text-right">GP/xp</th>
-                        <th class="col-sm-2 text-right">EXP/hr</th>
-                        <th class="col-sm-2 text-right" tooltip-append-to-body="true" uib-tooltip="EXP/hr adjusted based on your income. See the about page for how it's calculated."> Effective EXP/hr <span class="glyphicon glyphicon-question-sign"></span></th>
-                        </thead>
-                        <tbody>
-                            <tr ng-repeat="method in mainCtrl.trainingMethods" class="text-right">
-                                <td class="text-center"> <a href="" ng-click="mainCtrl.detailMethod(method)"><span class="glyphicon glyphicon-info-sign pull-left"></span></a>{{method.name}}</td>
-                                <td>{{method.experiencePerAction | number}}</td>
-                                <td>{{method.level}}</td>
-                                <td><span ng-if="method.ready">{{method.profit | number}}</span></td>
-                                <td><span ng-if="method.ready">{{method.profit / method.experiencePerAction | number : 2}}</span></td>
-                                <td>{{method.experiencePerAction * method.actionsPerHour | number}}</td>
-                                <td><span ng-if="method.ready">{{mainCtrl.player.getProductivity(method) | number : 0}}</span></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
+    <div ng-view></div>
 </body>
 </html>

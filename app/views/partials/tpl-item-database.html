@@ -1,0 +1,16 @@
+<div class="container">
+<input type="text" ng-model="dbCtrl.searchName" placeholder="Search item names">
+
+<table ng-show="dbCtrl.ready">
+    <thead>
+    <th class="col-sm-2">ID</th>
+    <th class="col-sm-10">Name</th>
+    </thead>
+    <tbody>
+    <tr ng-repeat="item in dbCtrl.items | orderBy:dbCtrl.sortType:dbCtrl.sortReverse | filter:dbCtrl.searchName | limitTo:100">
+        <td>{{item.id}}</td>
+        <td>{{item.name}}</td>
+    </tr>
+    </tbody>
+</table>
+</div>

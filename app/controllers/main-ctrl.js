@@ -8,7 +8,7 @@
         _ctrl.activeSkill = false;
         _ctrl.trainingMethods = [ ];
 
-        _ctrl.sortType = 'Method';
+        _ctrl.sortType = 1;
         _ctrl.sortReverse = false;
 
         _ctrl.player = PlayerService;
@@ -45,7 +45,7 @@
             console.log("Opening modal..?")
             $uibModal.open({
                 animation: true,
-                templateUrl: 'app/views/partials/modalTrainingMethod.html',
+                templateUrl: 'app/views/partials/modal-training-method.html',
                 controller: 'ModalInstanceCtrl',
                 controllerAs: 'modalCtrl',
                 size: 'lg',
@@ -55,6 +55,23 @@
                     }
                 }
             });
+        };
+
+        _ctrl.trainingMethodOrder = function(entry){
+            var value;
+            switch(_ctrl.sortType) {
+                case 2:
+                    value = entry.experiencePerAction;
+                    break;
+                case 3:
+                    value = entry.level;
+                    break;
+                case 4:
+                    value = entry.profit;
+                    break;
+                default: value = entry.name;
+            }
+            return value;
         };
 
         function getInOutPrices(tm){

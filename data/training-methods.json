@@ -180,5 +180,111 @@
         }
       ]
     }
+  ],
+  "Prayer": [
+    {
+      "name": "Bones (Gilded altar)",
+      "actionsPerHour": 1300,
+      "level": 1,
+      "experiencePerAction": 15.75,
+      "inputs": [
+        {
+          "name": "Bones",
+          "id": 526,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "name": "Big bones (Gilded altar)",
+      "actionsPerHour": 1300,
+      "level": 1,
+      "experiencePerAction": 52.2,
+      "inputs": [
+        {
+          "name": "Big bones",
+          "id": 532,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "name": "Babydragon bones (Gilded altar)",
+      "actionsPerHour": 1300,
+      "level": 1,
+      "experiencePerAction": 105,
+      "inputs": [
+        {
+          "name": "Babydragon bones",
+          "id": 534,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "name": "Wyvern bones (Gilded altar)",
+      "actionsPerHour": 1300,
+      "level": 1,
+      "experiencePerAction": 252,
+      "inputs": [
+        {
+          "name": "Wyvern bones",
+          "id": 6812,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "name": "Dragon bones (Gilded altar)",
+      "actionsPerHour": 1300,
+      "level": 1,
+      "experiencePerAction": 252,
+      "inputs": [
+        {
+          "name": "Dragon bones",
+          "id": 536,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "name": "Lava dragon bones (Gilded altar)",
+      "actionsPerHour": 1300,
+      "level": 1,
+      "experiencePerAction": 297.5,
+      "inputs": [
+        {
+          "name": "Lava dragon bones",
+          "id": -1,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "name": "Dagannoth bones (Gilded altar)",
+      "actionsPerHour": 1300,
+      "level": 1,
+      "experiencePerAction": 437.5,
+      "inputs": [
+        {
+          "name": "Dagannoth bones",
+          "id": -1,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "name": "Ourg bones (Gilded altar)",
+      "actionsPerHour": 1300,
+      "level": 1,
+      "experiencePerAction": 490,
+      "inputs": [
+        {
+          "name": "Ourg bones",
+          "id": -1,
+          "qty": 1
+        }
+      ]
+    }
   ]
 }
