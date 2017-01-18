@@ -25,7 +25,7 @@
 
         console.log(JSON.stringify(yqlResponse))
 
-        var data = yqlResponse.query.results;
+        var data = yqlResponse.query.results.row;
 
         var results = { };
 
@@ -58,5 +58,4 @@
         }
         return _service;
     };
-
 })();
