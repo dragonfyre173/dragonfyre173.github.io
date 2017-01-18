@@ -28,7 +28,7 @@
             "Farming", "Runecrafting", "Hunter", "Construction"
         ];
 
-        _factory.baseUrl = "http://services.runescape.com/m=hiscore_oldschool/index_lite.ws?player=";
+        _factory.baseUrl = "https://services.runescape.com/m=hiscore_oldschool/index_lite.ws?player=";
 
 
         _service.getPlayer = function(name) {
