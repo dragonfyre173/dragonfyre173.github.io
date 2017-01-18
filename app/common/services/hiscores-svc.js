@@ -14,6 +14,7 @@
     }
 
     function yqlParseHiscores(response) {
+        console.log(JSON.stringify(response));
         return response;
     }
 
