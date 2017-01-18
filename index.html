@@ -39,7 +39,7 @@
                     <input type="text" min="0" class="form-control" placeholder="Input your income (GP/hr)" ng-model="mainCtrl.player.income" number-format>
                     <span class="input-group-addon">GP/hr</span>
                     <span class="input-group-btn">
-                        <button class="btn btn-default" type="button" tooltip-placement="bottom" uib-tooltip="Enter your income in GP/hr. Or, in other words, what do you value your time at? For example, if you like to catch anglerfish, you might put 200,000 GP/hr.">
+                        <button class="btn btn-default" type="button" tooltip-placement="bottom" data-container="body" uib-tooltip="Enter your income in GP/hr. Or, in other words, what do you value your time at? For example, if you like to catch anglerfish, you might put 200,000 GP/hr.">
                             <span class="glyphicon glyphicon-question-sign"></span>
                         </button>
                     </span>
@@ -68,7 +68,7 @@
                         <th class="col-sm-1 text-right">Profit</th>
                         <th class="col-sm-1 text-right">GP/xp</th>
                         <th class="col-sm-2 text-right">EXP/hr</th>
-                        <th class="col-sm-2 text-right" uib-tooltip="EXP/hr adjusted based on your income. See the about page for how it's calculated."> Effective EXP/hr <span class="glyphicon glyphicon-question-sign"></span></th>
+                        <th class="col-sm-2 text-right" tooltip-append-to-body="true" uib-tooltip="EXP/hr adjusted based on your income. See the about page for how it's calculated."> Effective EXP/hr <span class="glyphicon glyphicon-question-sign"></span></th>
                         </thead>
                         <tbody>
                             <tr ng-repeat="method in mainCtrl.trainingMethods" class="text-right">

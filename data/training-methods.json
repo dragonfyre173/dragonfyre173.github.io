@@ -23,7 +23,7 @@
     {
       "name": "Blue d'hide bodies",
       "actionsPerHour": 1650,
-      "level": 63,
+      "level": 71,
       "experiencePerAction": 210,
       "inputs": [
         {
@@ -43,7 +43,7 @@
     {
       "name": "Red d'hide bodies",
       "actionsPerHour": 1650,
-      "level": 63,
+      "level": 77,
       "experiencePerAction": 234,
       "inputs": [
         {
@@ -63,7 +63,7 @@
     {
     "name": "Black d'hide bodies",
     "actionsPerHour": 1650,
-    "level": 63,
+    "level": 84,
     "experiencePerAction": 258,
     "inputs": [
       {
@@ -79,6 +79,106 @@
         "qty": 1
       }
     ]
-  }
+  },
+    {
+      "name": "Water battlestaves",
+      "actionsPerHour": 2450,
+      "level": 54,
+      "experiencePerAction": 100,
+      "inputs": [
+        {
+          "name": "Water orb",
+          "id": 571,
+          "qty": 1
+        },
+        {
+          "name": "Battlestaff",
+          "id": 1391,
+          "qty": 1
+        }
+      ],
+      "outputs": [
+        {
+          "name": "Water battlestaff",
+          "id": 1395,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "name": "Earth battlestaves",
+      "actionsPerHour": 2450,
+      "level": 58,
+      "experiencePerAction": 112.5,
+      "inputs": [
+        {
+          "name": "Earth orb",
+          "id": 575,
+          "qty": 1
+        },
+        {
+          "name": "Battlestaff",
+          "id": 1391,
+          "qty": 1
+        }
+      ],
+      "outputs": [
+        {
+          "name": "Earth battlestaff",
+          "id": 1399,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "name": "Fire battlestaves",
+      "actionsPerHour": 2450,
+      "level": 62,
+      "experiencePerAction": 125,
+      "inputs": [
+        {
+          "name": "Fire orb",
+          "id": 569,
+          "qty": 1
+        },
+        {
+          "name": "Battlestaff",
+          "id": 1391,
+          "qty": 1
+        }
+      ],
+      "outputs": [
+        {
+          "name": "Fire battlestaff",
+          "id": 1393,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "name": "Air battlestaves",
+      "actionsPerHour": 2450,
+      "level": 66,
+      "experiencePerAction": 137.5,
+      "inputs": [
+        {
+          "name": "Air orb",
+          "id": 573,
+          "qty": 1
+        },
+        {
+          "name": "Battlestaff",
+          "id": 1391,
+          "qty": 1
+        }
+      ],
+      "outputs": [
+        {
+          "name": "Air battlestaff",
+          "id": 1397,
+          "qty": 1
+        }
+      ]
+    }
   ]
 }

@@ -1,15 +1,14 @@
 <div class="modal-header">
-    <h3 class="modal-title text-center" id="modal-title">{{modalCtrl.trainingMethod.name}}</h3>
+    <h3 class="modal-title text-center" id="modal-title">{{modalCtrl.trainingMethod.name}} ({{modalCtrl.trainingMethod.level}}<image height="25" width="25" ng-src="img/{{modalCtrl.trainingMethod.skill}}.png"></image>)</h3>
 </div>
 <div class="modal-body" id="modal-body">
-    Requires {{modalCtrl.trainingMethod.level}}<image height="25" width="25" ng-src="img/{{modalCtrl.trainingMethod.skill}}.png"></image>
     <div class="panel panel-default">
         <div class="panel-heading text-center"><h4>Profit/Cost Breakdown</h4></div>
         <table class="table table-bordered table-striped">
             <thead>
             <th class="col-sm-4 text-center">Item</th>
             <th class="col-sm-2 text-right">Quantity</th>
-            <th class="col-sm-2 text-right" uib-tooltip="RSBuddy Grand Exchange median price. Negative price = input.">Value <span class="glyphicon glyphicon-question-sign pull-right"></span></th>
+            <th class="col-sm-2 text-right" data-container="body" tooltip-append-to-body="true" uib-tooltip="RSBuddy Grand Exchange median price.">Value <span class="glyphicon glyphicon-question-sign pull-right"></span></th>
             <th class="col-sm-2 text-right">Items per Hour</th>
             <th class="col-sm-2 text-right">Cost per Hour</th>
             </thead>

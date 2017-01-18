@@ -8,6 +8,9 @@
         _ctrl.activeSkill = false;
         _ctrl.trainingMethods = [ ];
 
+        _ctrl.sortType = 'Method';
+        _ctrl.sortReverse = false;
+
         _ctrl.player = PlayerService;
 
         _ctrl.updateName = function() {
@@ -40,7 +43,7 @@
 
         _ctrl.detailMethod = function (tm) {
             console.log("Opening modal..?")
-            var modalInstance = $uibModal.open({
+            $uibModal.open({
                 animation: true,
                 templateUrl: 'app/views/partials/modalTrainingMethod.html',
                 controller: 'ModalInstanceCtrl',
@@ -51,12 +54,6 @@
                         return tm;
                     }
                 }
-            });
-
-            modalInstance.result.then(function (selectedItem) {
-                _ctrl.selected = selectedItem;
-            }, function () {
-                $log.info('Modal dismissed at: ' + new Date());
             });
         };
 
