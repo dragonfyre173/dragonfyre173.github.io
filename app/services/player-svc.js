@@ -43,6 +43,7 @@
         var _service = {
             name: '',
             income: 500000,
+            incomeMultiplier: 1,
             hiscores: { }
         };
 
@@ -71,7 +72,7 @@
             // 1. Calculate total cost (or profit) per hour of training method
             var costPerHour = tm.profit * tm.actionsPerHour;
             // 2. Calculate total hours spent for one hour of training
-            var hoursPerIncome = 1 + (-1 * costPerHour / _service.income);
+            var hoursPerIncome = 1 + (-1 * costPerHour / (_service.income * _service.incomeMultiplier));
             // 3. Calculate effective XP per hour
             var effectiveXph = (tm.experiencePerAction * tm.actionsPerHour) / hoursPerIncome;
             return effectiveXph;

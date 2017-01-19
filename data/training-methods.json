@@ -285,6 +285,597 @@
           "qty": 1
         }
       ]
+    },
+    {
+      "name": "Reanimate Goblin",
+      "actionsPerHour": 200,
+      "level": 1,
+      "experiencePerAction": 130,
+      "inputs": [
+        {
+          "name": "Ensouled goblin head",
+          "id": 13448,
+          "qty": 1
+        },
+        {
+          "name": "Body rune",
+          "id": 559,
+          "qty": 2
+        },
+        {
+          "name": "Nature rune",
+          "id": 561,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "name": "Reanimate Monkey",
+      "actionsPerHour": 200,
+      "level": 1,
+      "experiencePerAction": 182,
+      "inputs": [
+        {
+          "name": "Ensouled monkey head",
+          "id": 13451,
+          "qty": 1
+        },
+        {
+          "name": "Body rune",
+          "id": 559,
+          "qty": 3
+        },
+        {
+          "name": "Nature rune",
+          "id": 561,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "name": "Reanimate Imp",
+      "actionsPerHour": 200,
+      "level": 1,
+      "experiencePerAction": 286,
+      "inputs": [
+        {
+          "name": "Ensouled imp head",
+          "id": 13454,
+          "qty": 1
+        },
+        {
+          "name": "Body rune",
+          "id": 559,
+          "qty": 3
+        },
+        {
+          "name": "Nature rune",
+          "id": 561,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "name": "Reanimate Minotaur",
+      "actionsPerHour": 200,
+      "level": 1,
+      "experiencePerAction": 364,
+      "inputs": [
+        {
+          "name": "Ensouled minotaur head",
+          "id": 13457,
+          "qty": 1
+        },
+        {
+          "name": "Body rune",
+          "id": 559,
+          "qty": 4
+        },
+        {
+          "name": "Nature rune",
+          "id": 561,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "name": "Reanimate Scorpion",
+      "actionsPerHour": 200,
+      "level": 1,
+      "experiencePerAction": 454,
+      "inputs": [
+        {
+          "name": "Ensouled scorpion head",
+          "id": 13460,
+          "qty": 1
+        },
+        {
+          "name": "Nature rune",
+          "id": 561,
+          "qty": 1
+        },
+        {
+          "name": "Soul rune",
+          "id": 566,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "name": "Reanimate Bear",
+      "actionsPerHour": 200,
+      "level": 1,
+      "experiencePerAction": 480,
+      "inputs": [
+        {
+          "name": "Ensouled bear head",
+          "id": 13463,
+          "qty": 1
+        },
+        {
+          "name": "Body rune",
+          "id": 559,
+          "qty": 1
+        },
+        {
+          "name": "Nature rune",
+          "id": 561,
+          "qty": 1
+        },
+        {
+          "name": "Soul rune",
+          "id": 566,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "name": "Reanimate Unicorn",
+      "actionsPerHour": 200,
+      "level": 1,
+      "experiencePerAction": 494,
+      "inputs": [
+        {
+          "name": "Ensouled unicorn head",
+          "id": 13466,
+          "qty": 1
+        },
+        {
+          "name": "Body rune",
+          "id": 559,
+          "qty": 2
+        },
+        {
+          "name": "Nature rune",
+          "id": 561,
+          "qty": 1
+        },
+        {
+          "name": "Soul rune",
+          "id": 566,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "name": "Reanimate Dog",
+      "actionsPerHour": 200,
+      "level": 1,
+      "experiencePerAction": 520,
+      "inputs": [
+        {
+          "name": "Ensouled dog head",
+          "id": 13469,
+          "qty": 1
+        },
+        {
+          "name": "Body rune",
+          "id": 559,
+          "qty": 2
+        },
+        {
+          "name": "Nature rune",
+          "id": 561,
+          "qty": 2
+        },
+        {
+          "name": "Soul rune",
+          "id": 566,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "name": "Reanimate Chaos Druid",
+      "actionsPerHour": 200,
+      "level": 1,
+      "experiencePerAction": 584,
+      "inputs": [
+        {
+          "name": "Ensouled chaos druid head",
+          "id": 13472,
+          "qty": 1
+        },
+        {
+          "name": "Body rune",
+          "id": 559,
+          "qty": 3
+        },
+        {
+          "name": "Nature rune",
+          "id": 561,
+          "qty": 2
+        },
+        {
+          "name": "Soul rune",
+          "id": 566,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "name": "Reanimate Giant",
+      "actionsPerHour": 200,
+      "level": 1,
+      "experiencePerAction": 650,
+      "inputs": [
+        {
+          "name": "Ensouled giant head",
+          "id": 13475,
+          "qty": 1
+        },
+        {
+          "name": "Body rune",
+          "id": 559,
+          "qty": 4
+        },
+        {
+          "name": "Nature rune",
+          "id": 561,
+          "qty": 2
+        },
+        {
+          "name": "Soul rune",
+          "id": 566,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "name": "Reanimate Ogre",
+      "actionsPerHour": 200,
+      "level": 1,
+      "experiencePerAction": 716,
+      "inputs": [
+        {
+          "name": "Ensouled ogre head",
+          "id": 13478,
+          "qty": 1
+        },
+        {
+          "name": "Body rune",
+          "id": 559,
+          "qty": 4
+        },
+        {
+          "name": "Nature rune",
+          "id": 561,
+          "qty": 3
+        },
+        {
+          "name": "Soul rune",
+          "id": 566,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "name": "Reanimate Elf",
+      "actionsPerHour": 200,
+      "level": 1,
+      "experiencePerAction": 754,
+      "inputs": [
+        {
+          "name": "Ensouled elf head",
+          "id": 13481,
+          "qty": 1
+        },
+        {
+          "name": "Body rune",
+          "id": 559,
+          "qty": 2
+        },
+        {
+          "name": "Nature rune",
+          "id": 561,
+          "qty": 2
+        },
+        {
+          "name": "Soul rune",
+          "id": 566,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "name": "Reanimate Troll",
+      "actionsPerHour": 200,
+      "level": 1,
+      "experiencePerAction": 780,
+      "inputs": [
+        {
+          "name": "Ensouled troll head",
+          "id": 13484,
+          "qty": 1
+        },
+        {
+          "name": "Body rune",
+          "id": 559,
+          "qty": 3
+        },
+        {
+          "name": "Nature rune",
+          "id": 561,
+          "qty": 2
+        },
+        {
+          "name": "Soul rune",
+          "id": 566,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "name": "Reanimate Horror",
+      "actionsPerHour": 200,
+      "level": 1,
+      "experiencePerAction": 832,
+      "inputs": [
+        {
+          "name": "Ensouled horror head",
+          "id": 13487,
+          "qty": 1
+        },
+        {
+          "name": "Body rune",
+          "id": 559,
+          "qty": 4
+        },
+        {
+          "name": "Nature rune",
+          "id": 561,
+          "qty": 2
+        },
+        {
+          "name": "Soul rune",
+          "id": 566,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "name": "Reanimate Kalphite",
+      "actionsPerHour": 200,
+      "level": 1,
+      "experiencePerAction": 884,
+      "inputs": [
+        {
+          "name": "Ensouled kalphite head",
+          "id": 13490,
+          "qty": 1
+        },
+        {
+          "name": "Body rune",
+          "id": 559,
+          "qty": 4
+        },
+        {
+          "name": "Nature rune",
+          "id": 561,
+          "qty": 3
+        },
+        {
+          "name": "Soul rune",
+          "id": 566,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "name": "Reanimate Dagannoth",
+      "actionsPerHour": 200,
+      "level": 1,
+      "experiencePerAction": 936,
+      "inputs": [
+        {
+          "name": "Ensouled dagannoth head",
+          "id": 13493,
+          "qty": 1
+        },
+        {
+          "name": "Body rune",
+          "id": 559,
+          "qty": 4
+        },
+        {
+          "name": "Nature rune",
+          "id": 561,
+          "qty": 3
+        },
+        {
+          "name": "Soul rune",
+          "id": 566,
+          "qty": 3
+        }
+      ]
+    },
+    {
+      "name": "Reanimate Bloodveld",
+      "actionsPerHour": 200,
+      "level": 1,
+      "experiencePerAction": 1040,
+      "inputs": [
+        {
+          "name": "Ensouled bloodveld head",
+          "id": 13496,
+          "qty": 1
+        },
+        {
+          "name": "Nature rune",
+          "id": 561,
+          "qty": 2
+        },
+        {
+          "name": "Soul rune",
+          "id": 566,
+          "qty": 2
+        },
+        {
+          "name": "Blood rune",
+          "id": 565,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "name": "Reanimate TzHaar",
+      "actionsPerHour": 200,
+      "level": 1,
+      "experiencePerAction": 1104,
+      "inputs": [
+        {
+          "name": "Ensouled tzhaar head",
+          "id": 13499,
+          "qty": 1
+        },
+        {
+          "name": "Nature rune",
+          "id": 561,
+          "qty": 3
+        },
+        {
+          "name": "Soul rune",
+          "id": 566,
+          "qty": 2
+        },
+        {
+          "name": "Blood rune",
+          "id": 565,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "name": "Reanimate Demon",
+      "actionsPerHour": 200,
+      "level": 1,
+      "experiencePerAction": 1170,
+      "inputs": [
+        {
+          "name": "Ensouled demon head",
+          "id": 13502,
+          "qty": 1
+        },
+        {
+          "name": "Nature rune",
+          "id": 561,
+          "qty": 4
+        },
+        {
+          "name": "Soul rune",
+          "id": 566,
+          "qty": 2
+        },
+        {
+          "name": "Blood rune",
+          "id": 565,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "name": "Reanimate Aviansie",
+      "actionsPerHour": 200,
+      "level": 1,
+      "experiencePerAction": 1234,
+      "inputs": [
+        {
+          "name": "Ensouled aviansie head",
+          "id": 13505,
+          "qty": 1
+        },
+        {
+          "name": "Nature rune",
+          "id": 561,
+          "qty": 4
+        },
+        {
+          "name": "Soul rune",
+          "id": 566,
+          "qty": 3
+        },
+        {
+          "name": "Blood rune",
+          "id": 565,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "name": "Reanimate Abyssal Creature",
+      "actionsPerHour": 200,
+      "level": 1,
+      "experiencePerAction": 1300,
+      "inputs": [
+        {
+          "name": "Ensouled abyssal head",
+          "id": 13508,
+          "qty": 1
+        },
+        {
+          "name": "Nature rune",
+          "id": 561,
+          "qty": 4
+        },
+        {
+          "name": "Soul rune",
+          "id": 566,
+          "qty": 4
+        },
+        {
+          "name": "Blood rune",
+          "id": 565,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "name": "Reanimate Dragon",
+      "actionsPerHour": 200,
+      "level": 1,
+      "experiencePerAction": 1560,
+      "inputs": [
+        {
+          "name": "Ensouled dragon head",
+          "id": 13511,
+          "qty": 1
+        },
+        {
+          "name": "Nature rune",
+          "id": 561,
+          "qty": 4
+        },
+        {
+          "name": "Soul rune",
+          "id": 566,
+          "qty": 4
+        },
+        {
+          "name": "Blood rune",
+          "id": 565,
+          "qty": 2
+        }
+      ]
     }
   ]
 }

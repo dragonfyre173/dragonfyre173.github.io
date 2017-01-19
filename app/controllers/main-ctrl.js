@@ -8,10 +8,34 @@
         _ctrl.activeSkill = false;
         _ctrl.trainingMethods = [ ];
 
-        _ctrl.sortType = 1;
-        _ctrl.sortReverse = false;
+        _ctrl.sortType = 7;
+        _ctrl.sortReverse = true;
 
         _ctrl.player = PlayerService;
+
+        _ctrl.gphMults = [
+            {
+                "text": "GP/hr",
+                "mult": 1
+            },
+            {
+                "text": "K GP/hr",
+                "mult": 1000
+            },
+            {
+                "text": "M GP/hr",
+                "mult": 1000000
+            }
+        ];
+
+        _ctrl.setGph = 0;
+
+        _ctrl.incrementGphMult = function() {
+            var oldIncome = _ctrl.player.income * _ctrl.player.incomeMultiplier;
+            _ctrl.setGph = (_ctrl.setGph + 1) % 3;
+            _ctrl.player.incomeMultiplier = _ctrl.gphMults[_ctrl.setGph].mult;
+            _ctrl.player.income = oldIncome / _ctrl.gphMults[_ctrl.setGph].mult;
+        };
 
         _ctrl.updateName = function() {
             PlayerService.name = _ctrl.tempName;
@@ -42,7 +66,6 @@
         };
 
         _ctrl.detailMethod = function (tm) {
-            console.log("Opening modal..?")
             $uibModal.open({
                 animation: true,
                 templateUrl: 'app/views/partials/modal-training-method.html',
@@ -99,8 +122,7 @@
             if("inputs" in tm) {
                 for(var i = 0; i < tm.inputs.length; i++) {
                     (function(item){promises.push(GrandExchange.getGuidePrice(item.id).then(function(response){
-                        console.log(item.id + ": " + JSON.stringify(response));
-                        item.price = response.overall;
+                        item.price = response;
                     }))})(tm.inputs[i]);
                 }
             }
@@ -108,8 +130,7 @@
             if("outputs" in tm) {
                 for(var o = 0; o < tm.outputs.length; o++) {
                     (function(item){promises.push(GrandExchange.getGuidePrice(item.id).then(function(response){
-                        console.log(item.id + ": " + JSON.stringify(response));
-                        item.price = response.overall;
+                        item.price = response;
                     }))})(tm.outputs[o]);
                 }
             }
@@ -134,7 +155,7 @@
                 }
 
                 tm.ready = true;
-                console.log(JSON.stringify(tm));
+                console.log(tm.name + ": Done!");
             });
         }
     }

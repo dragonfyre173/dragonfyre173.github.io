@@ -12,13 +12,15 @@
         </div>
         <div class="col-sm-4">
             <div class="input-group">
-                <input type="text" min="0" class="form-control" placeholder="Input your income (GP/hr)" ng-model="mainCtrl.player.income" number-format>
-                <span class="input-group-addon">GP/hr</span>
+                <input type="number"class="form-control" ng-model="mainCtrl.player.income" ng-step="{{1 / mainCtrl.gphMults[mainCtrl.setGph].mult}}">
                 <span class="input-group-btn">
-                        <button class="btn btn-default" type="button" tooltip-placement="bottom" data-container="body" uib-tooltip="Enter your income in GP/hr. Or, in other words, what do you value your time at? For example, if you like to catch anglerfish, you might put 200,000 GP/hr.">
-                            <span class="glyphicon glyphicon-question-sign"></span>
-                        </button>
-                    </span>
+                    <button class="btn btn-default" type="button" ng-click="mainCtrl.incrementGphMult()">
+                        {{mainCtrl.gphMults[mainCtrl.setGph].text}}
+                    </button>
+                    <button class="btn btn-default" type="button" tooltip-placement="bottom" data-container="body" uib-tooltip="Enter your income in GP/hr. Or, in other words, what do you value your time at? For example, if you like to catch anglerfish, you might put 200,000 GP/hr.">
+                        <span class="glyphicon glyphicon-question-sign"></span>
+                    </button>
+                </span>
             </div>
         </div>
     </div>
@@ -55,7 +57,7 @@
                         <span ng-show="mainCtrl.sortType==3 && !mainCtrl.sortReverse" class="glyphicon glyphicon-triangle-top"></span></a>
                     </th>
                     <th class="col-sm-1 text-right">
-                        <a href ng-click="mainCtrl.sortType=4">Profit
+                        <a href ng-click="mainCtrl.setSort(4)">Profit
                         <span ng-show="mainCtrl.sortType==4 && mainCtrl.sortReverse" class="glyphicon glyphicon-triangle-bottom"></span>
                         <span ng-show="mainCtrl.sortType==4 && !mainCtrl.sortReverse" class="glyphicon glyphicon-triangle-top"></span></a>
                     </th>

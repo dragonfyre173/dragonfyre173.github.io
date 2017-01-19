@@ -1,8 +1,8 @@
 (function(){
     angular.module('app')
-        .controller('ModalInstanceCtrl', ['$uibModalInstance', 'trainingMethod', ModalInstanceCtrl]);
+        .controller('ModalInstanceController', ['$uibModalInstance', 'trainingMethod', ModalInstanceController]);
 
-    function ModalInstanceCtrl($uibModalInstance, trainingMethod){
+    function ModalInstanceController($uibModalInstance, trainingMethod){
         var _ctrl = this;
         _ctrl.trainingMethod = trainingMethod;
     }
