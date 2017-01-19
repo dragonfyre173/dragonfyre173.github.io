@@ -57,6 +57,15 @@
             });
         };
 
+        _ctrl.setSort = function(sorter) {
+            if(_ctrl.sortType == sorter) {
+                _ctrl.sortReverse = !_ctrl.sortReverse;
+            } else {
+                _ctrl.sortType = sorter;
+                _ctrl.sortReverse = false;
+            }
+        };
+
         _ctrl.trainingMethodOrder = function(entry){
             var value;
             switch(_ctrl.sortType) {
@@ -69,7 +78,17 @@
                 case 4:
                     value = entry.profit;
                     break;
-                default: value = entry.name;
+                case 5:
+                    value = entry.profit / entry.experiencePerAction;
+                    break;
+                case 6:
+                    value = entry.experiencePerAction * entry.actionsPerHour;
+                    break;
+                case 7:
+                    value = PlayerService.getProductivity(entry);
+                    break;
+                default:
+                    value = entry.name;
             }
             return value;
         };

@@ -39,13 +39,42 @@
                 <div class="panel-heading text-center"><h4>{{mainCtrl.activeSkill}} Training</h4></div>
                 <table class="table table-striped table-bordered">
                     <thead>
-                    <th class="col-sm-4 text-center"><a href ng-click="mainCtrl.sortType=1">Method</a></th>
-                    <th class="col-sm-1 text-right"><a href ng-click="mainCtrl.sortType=2">Exp</a></th>
-                    <th class="col-sm-1 text-right"><a href ng-click="mainCtrl.sortType=3">Level</a></th>
-                    <th class="col-sm-1 text-right"><a href ng-click="mainCtrl.sortType=4">Profit</a></th>
-                    <th class="col-sm-1 text-right"><a href ng-click="mainCtrl.sortType=5">GP/xp</a></th>
-                    <th class="col-sm-2 text-right"><a href ng-click="mainCtrl.sortType=6">EXP/hr</a></th>
-                    <th class="col-sm-2 text-right" tooltip-append-to-body="true" uib-tooltip="EXP/hr adjusted based on your income. See the about page for how it's calculated."><a href ng-click="mainCtrl.sortType=7"> Effective EXP/hr <span class="glyphicon glyphicon-question-sign"></span></a></th>
+                    <th class="col-sm-4 text-center">
+                        <a href ng-click="mainCtrl.setSort(1)">Method
+                        <span ng-show="mainCtrl.sortType==1 && mainCtrl.sortReverse" class="glyphicon glyphicon-triangle-bottom"></span>
+                        <span ng-show="mainCtrl.sortType==1 && !mainCtrl.sortReverse" class="glyphicon glyphicon-triangle-top"></span></a>
+                    </th>
+                    <th class="col-sm-1 text-right">
+                        <a href ng-click="mainCtrl.setSort(2)">Exp
+                        <span ng-show="mainCtrl.sortType==2 && mainCtrl.sortReverse" class="glyphicon glyphicon-triangle-bottom"></span>
+                        <span ng-show="mainCtrl.sortType==2 && !mainCtrl.sortReverse" class="glyphicon glyphicon-triangle-top"></span></a>
+                    </th>
+                    <th class="col-sm-1 text-right">
+                        <a href ng-click="mainCtrl.setSort(3)">Level
+                        <span ng-show="mainCtrl.sortType==3 && mainCtrl.sortReverse" class="glyphicon glyphicon-triangle-bottom"></span>
+                        <span ng-show="mainCtrl.sortType==3 && !mainCtrl.sortReverse" class="glyphicon glyphicon-triangle-top"></span></a>
+                    </th>
+                    <th class="col-sm-1 text-right">
+                        <a href ng-click="mainCtrl.sortType=4">Profit
+                        <span ng-show="mainCtrl.sortType==4 && mainCtrl.sortReverse" class="glyphicon glyphicon-triangle-bottom"></span>
+                        <span ng-show="mainCtrl.sortType==4 && !mainCtrl.sortReverse" class="glyphicon glyphicon-triangle-top"></span></a>
+                    </th>
+                    <th class="col-sm-1 text-right">
+                        <a href ng-click="mainCtrl.setSort(5)">GP/xp
+                        <span ng-show="mainCtrl.sortType==5 && mainCtrl.sortReverse" class="glyphicon glyphicon-triangle-bottom"></span>
+                        <span ng-show="mainCtrl.sortType==5 && !mainCtrl.sortReverse" class="glyphicon glyphicon-triangle-top"></span></a>
+                    </th>
+                    <th class="col-sm-2 text-right">
+                        <a href ng-click="mainCtrl.setSort(6)">EXP/hr
+                        <span ng-show="mainCtrl.sortType==6 && mainCtrl.sortReverse" class="glyphicon glyphicon-triangle-bottom"></span>
+                        <span ng-show="mainCtrl.sortType==6 && !mainCtrl.sortReverse" class="glyphicon glyphicon-triangle-top"></span></a>
+                    </th>
+                    <th class="col-sm-2 text-right" tooltip-append-to-body="true" uib-tooltip="EXP/hr adjusted based on your income. See the about page for how it's calculated.">
+                        <a href ng-click="mainCtrl.setSort(7)">Effective EXP/hr
+                        <span ng-show="mainCtrl.sortType==7 && mainCtrl.sortReverse" class="glyphicon glyphicon-triangle-bottom"></span>
+                        <span ng-show="mainCtrl.sortType==7 && !mainCtrl.sortReverse" class="glyphicon glyphicon-triangle-top"></span></a>
+                        &nbsp;<span class="glyphicon glyphicon-question-sign pull-right"></span>
+                    </th>
                     </thead>
                     <tbody>
                     <tr ng-repeat="method in mainCtrl.trainingMethods | orderBy:mainCtrl.trainingMethodOrder:mainCtrl.sortReverse" class="text-right">

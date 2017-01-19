@@ -255,7 +255,7 @@
       "inputs": [
         {
           "name": "Lava dragon bones",
-          "id": -1,
+          "id": 11943,
           "qty": 1
         }
       ]
@@ -268,7 +268,7 @@
       "inputs": [
         {
           "name": "Dagannoth bones",
-          "id": -1,
+          "id": 6729,
           "qty": 1
         }
       ]
@@ -281,7 +281,7 @@
       "inputs": [
         {
           "name": "Ourg bones",
-          "id": -1,
+          "id": 4834,
           "qty": 1
         }
       ]
