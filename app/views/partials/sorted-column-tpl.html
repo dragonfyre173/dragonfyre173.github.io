@@ -1,0 +1,4 @@
+<a href ng-click="ctrl.setSort(sortName)">{{columnName}}
+<span ng-show="hasTooltip" class="glyphicon glyphicon-question-sign"></span>
+<span ng-show="ctrl.sortType==sortName && ctrl.sortReverse" class="glyphicon glyphicon-triangle-bottom"></span>
+<span ng-show="ctrl.sortType==sortName && !ctrl.sortReverse" class="glyphicon glyphicon-triangle-top"></span></a>

@@ -5,12 +5,12 @@
             //delete $httpProvider.defaults.headers.common['X-Requested-With'];
             $routeProvider
                 .when('/methods',{
-                    templateUrl: 'app/views/partials/tpl-method-overview.html',
+                    templateUrl: 'app/views/partials/method-overview-tpl.html',
                     controller: 'MainController',
                     controllerAs: 'mainCtrl'
                 })
                 .when('/items',{
-                    templateUrl: 'app/views/partials/tpl-item-database.html',
+                    templateUrl: 'app/views/partials/item-database-tpl.html',
                     controller: 'ItemDatabaseController',
                     controllerAs: 'dbCtrl'
                 })

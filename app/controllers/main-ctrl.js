@@ -5,7 +5,15 @@
     function MainController(PlayerService, TrainingMethods, GrandExchange, $q, $uibModal, $document, $http) {
         var _ctrl = this;
 
-        var defaultReverse = [ false, true, false, true, true, true, true ];
+        var defaultReverse = {
+            "name": false,
+            "exp": true,
+            "lvl": false,
+            "profit": true,
+            "gpxp": true,
+            "xphr": true,
+            "adjustedxphr": true
+        };
 
         _ctrl.activeSkill = false;
 
@@ -30,7 +38,7 @@
 
         _ctrl.setGph = 0;
 
-        _ctrl.sortType = 7;
+        _ctrl.sortType = "adjustedexphr";
 
         _ctrl.sortReverse = true;
 
@@ -181,30 +189,37 @@
                 _ctrl.sortReverse = !_ctrl.sortReverse;
             } else {
                 _ctrl.sortType = sorter;
-                _ctrl.sortReverse = defaultReverse[sorter - 1] || false;
+                _ctrl.sortReverse = defaultReverse[sorter] || false;
             }
         };
 
         _ctrl.trainingMethodOrder = function(entry){
             var value;
             switch(_ctrl.sortType) {
-                case 2:
+                case 'exp':
                     value = entry.experiencePerAction;
                     break;
-                case 3:
+                case 'level':
                     value = entry.level;
                     break;
-                case 4:
+                case 'profit':
                     value = entry.profit;
                     break;
-                case 5:
+                case 'gpxp':
                     value = entry.profit / entry.experiencePerAction;
                     break;
-                case 6:
+                case 'xphr':
                     value = entry.experiencePerAction * entry.actionsPerHour;
                     break;
-                case 7:
+                case 'adjustedxphr':
+                case 'eta':
                     value = PlayerService.getProductivity(entry);
+                    break;
+                case 'total':
+                    value = _ctrl.getProfitToGoal(entry);
+                    break;
+                case 'needed':
+                    value = _ctrl.getActionsToGoal(entry);
                     break;
                 default:
                     value = entry.name;
@@ -215,6 +230,20 @@
         _ctrl.calcCollapse = function() {
             _ctrl.calcCollapsed = !_ctrl.calcCollapsed;
         }
+
+        _ctrl.getActionsToGoal = function(trainingMethod) {
+            return Math.max(0, Math.ceil((_ctrl.calc.target.xp - _ctrl.calc.current.xp) / trainingMethod.experiencePerAction));
+        };
+
+        _ctrl.getProfitToGoal = function(trainingMethod) {
+            return trainingMethod.profit * _ctrl.getActionsToGoal(trainingMethod);
+        };
+
+        _ctrl.getHoursToGoal = function(trainingMethod) {
+            var _hours = (_ctrl.calc.target.xp - _ctrl.calc.current.xp) / PlayerService.getProductivity(trainingMethod);
+
+            return _hours;
+        };
 
         function getInOutPrices(tm){
             var promises = [ ];

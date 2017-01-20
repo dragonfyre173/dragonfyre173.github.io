@@ -73,7 +73,7 @@
                                             {{mainCtrl.calc.target.isXp ? 'XP' : 'LV'}}
                                         </label>
                                     </span>
-                                    <input required type="text" custom-min="{{mainCtrl.calc.target.isXp ? mainCtrl.calc.current.xp : mainCtrl.calc.current.lv}}" custom-max="200000000" number-input class="form-control" ng-model="mainCtrl.calc.target.val" ng-change="mainCtrl.updateSyncXpLv('target')">
+                                    <input required type="text" custom-min="mainCtrl.calc.target.isXp ? mainCtrl.calc.current.xp : mainCtrl.calc.current.lv" custom-max="200000000" number-input class="form-control" ng-model="mainCtrl.calc.target.val" ng-change="mainCtrl.updateSyncXpLv('target')">
                                 </div>
                             </div>
                         </div>
@@ -85,52 +85,27 @@
                 <div class="panel-heading text-center"><h4>{{mainCtrl.activeSkill}} Training</h4></div>
                 <table class="table table-striped table-bordered">
                     <thead>
-                    <th class="col-sm-4 text-center">
-                        <a href ng-click="mainCtrl.setSort(1)">Method
-                        <span ng-show="mainCtrl.sortType==1 && mainCtrl.sortReverse" class="glyphicon glyphicon-triangle-bottom"></span>
-                        <span ng-show="mainCtrl.sortType==1 && !mainCtrl.sortReverse" class="glyphicon glyphicon-triangle-top"></span></a>
-                    </th>
-                    <th class="col-sm-1 text-right">
-                        <a href ng-click="mainCtrl.setSort(2)">Exp
-                        <span ng-show="mainCtrl.sortType==2 && mainCtrl.sortReverse" class="glyphicon glyphicon-triangle-bottom"></span>
-                        <span ng-show="mainCtrl.sortType==2 && !mainCtrl.sortReverse" class="glyphicon glyphicon-triangle-top"></span></a>
-                    </th>
-                    <th class="col-sm-1 text-right">
-                        <a href ng-click="mainCtrl.setSort(3)">Level
-                        <span ng-show="mainCtrl.sortType==3 && mainCtrl.sortReverse" class="glyphicon glyphicon-triangle-bottom"></span>
-                        <span ng-show="mainCtrl.sortType==3 && !mainCtrl.sortReverse" class="glyphicon glyphicon-triangle-top"></span></a>
-                    </th>
-                    <th class="col-sm-1 text-right">
-                        <a href ng-click="mainCtrl.setSort(4)">Profit
-                        <span ng-show="mainCtrl.sortType==4 && mainCtrl.sortReverse" class="glyphicon glyphicon-triangle-bottom"></span>
-                        <span ng-show="mainCtrl.sortType==4 && !mainCtrl.sortReverse" class="glyphicon glyphicon-triangle-top"></span></a>
-                    </th>
-                    <th class="col-sm-1 text-right">
-                        <a href ng-click="mainCtrl.setSort(5)">GP/xp
-                        <span ng-show="mainCtrl.sortType==5 && mainCtrl.sortReverse" class="glyphicon glyphicon-triangle-bottom"></span>
-                        <span ng-show="mainCtrl.sortType==5 && !mainCtrl.sortReverse" class="glyphicon glyphicon-triangle-top"></span></a>
-                    </th>
-                    <th class="col-sm-2 text-right">
-                        <a href ng-click="mainCtrl.setSort(6)">EXP/hr
-                        <span ng-show="mainCtrl.sortType==6 && mainCtrl.sortReverse" class="glyphicon glyphicon-triangle-bottom"></span>
-                        <span ng-show="mainCtrl.sortType==6 && !mainCtrl.sortReverse" class="glyphicon glyphicon-triangle-top"></span></a>
-                    </th>
-                    <th class="col-sm-2 text-right" tooltip-append-to-body="true" uib-tooltip="EXP/hr adjusted based on your income. See the about page for how it's calculated.">
-                        <a href ng-click="mainCtrl.setSort(7)">Effective EXP/hr
-                        <span ng-show="mainCtrl.sortType==7 && mainCtrl.sortReverse" class="glyphicon glyphicon-triangle-bottom"></span>
-                        <span ng-show="mainCtrl.sortType==7 && !mainCtrl.sortReverse" class="glyphicon glyphicon-triangle-top"></span></a>
-                        &nbsp;<span class="glyphicon glyphicon-question-sign pull-right"></span>
-                    </th>
+                    <th sorted-column ctrl="mainCtrl" column-name="Method" sort-name="name" class="text-center col-sm-3"></th>
+                    <th sorted-column ctrl="mainCtrl" column-name="XP" sort-name="exp" class="text-center col-sm-1"></th>
+                    <th sorted-column ctrl="mainCtrl" column-name="Profit" sort-name="profit" class="text-center col-sm-1"></th>
+                    <th sorted-column ctrl="mainCtrl" column-name="GP/XP" sort-name="gpxp" class="text-center col-sm-1"></th>
+                    <th sorted-column ctrl="mainCtrl" column-name="XP/hr" sort-name="xphr" class="text-center col-sm-1"></th>
+                    <th sorted-column ctrl="mainCtrl" column-name="Effective XP/hr" sort-name="adjustedxphr" class="text-center col-sm-2" uib-tooltip="EXP/hr adjusted based on your income. See the about page for how it's calculated." tooltip-append-to-body="true" has-tooltip="true"></th>
+                    <th sorted-column ctrl="mainCtrl" column-name="Needed" sort-name="needed" class="text-right col-sm-1"></th>
+                    <th sorted-column ctrl="mainCtrl" column-name="Ttl. Profit" sort-name="total" class="text-right col-sm-1"></th>
+                    <th sorted-column ctrl="mainCtrl" column-name="Eff. ETA" sort-name="eta" class="text-right col-sm-1"></th>
                     </thead>
                     <tbody>
                     <tr ng-repeat="method in mainCtrl.trainingMethods | orderBy:mainCtrl.trainingMethodOrder:mainCtrl.sortReverse" class="text-right">
                         <td class="text-center"> <a href="" ng-click="mainCtrl.detailMethod(method)"><span class="glyphicon glyphicon-info-sign pull-left"></span></a>{{method.name}}</td>
                         <td>{{method.experiencePerAction | number}}</td>
-                        <td>{{method.level}}</td>
                         <td><span ng-if="method.ready">{{method.profit | number}}</span></td>
                         <td><span ng-if="method.ready">{{method.profit / method.experiencePerAction | number : 2}}</span></td>
                         <td>{{method.experiencePerAction * method.actionsPerHour | number}}</td>
                         <td><span ng-if="method.ready">{{mainCtrl.player.getProductivity(method) | number : 0}}</span></td>
+                        <td>{{mainCtrl.getActionsToGoal(method) | number : 0}}</span></td>
+                        <td><span ng-if="method.ready">{{mainCtrl.getProfitToGoal(method) | number : 0}}</span></td>
+                        <td>{{mainCtrl.getHoursToGoal(method) | number : 1}} hrs</td>
                     </tr>
                     </tbody>
                 </table>

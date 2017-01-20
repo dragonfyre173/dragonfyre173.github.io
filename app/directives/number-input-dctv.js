@@ -1,6 +1,6 @@
 (function(){
     angular.module('app')
-        .directive('numberInput', ['$filter', '$browser', NumberInput]);
+        .directive('numberInput', [NumberInput]);
 
 
     function NumberInput() {
@@ -8,9 +8,9 @@
             restrict: "A",
             require: "ngModel",
             scope: {
-                min: '@customMin',
-                max: '@customMax',
-                increment: '@incrementPow'
+                min: '=customMin',
+                max: '=customMax',
+                increment: '=?incrementPow'
             },
             link: function(scope, element, attrs, modelCtrl) {
 
