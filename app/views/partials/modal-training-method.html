@@ -18,14 +18,14 @@
                 <td>{{item.qty | number : 0}}</td>
                 <td class="text-danger">{{-1 * item.price | number : 0}}</td>
                 <td>{{item.qty * modalCtrl.trainingMethod.actionsPerHour | number : 0}}</td>
-                <td class="text-danger">{{-1 * item.price * modalCtrl.trainingMethod.actionsPerHour | number : 0}}</td>
+                <td class="text-danger">{{-1 * item.price * item.qty * modalCtrl.trainingMethod.actionsPerHour | number : 0}}</td>
             </tr>
             <tr class="text-right" ng-repeat="item in modalCtrl.trainingMethod.outputs">
                 <td class="text-center"><a target="_blank" href="https://rsbuddy.com/exchange?id={{item.id}}&">{{item.name}}</a></td>
                 <td>{{item.qty | number : 0}}</td>
                 <td class="text-success">{{item.price | number : 0}}</td>
                 <td>{{item.qty * modalCtrl.trainingMethod.actionsPerHour | number : 0}}</td>
-                <td class="text-success">{{item.price * modalCtrl.trainingMethod.actionsPerHour | number : 0}}</td>
+                <td class="text-success">{{item.price * item.qty * modalCtrl.trainingMethod.actionsPerHour | number : 0}}</td>
             </tr>
             <tr class="text-right">
                 <td class="text-center"><b>Gross Profit</b></td>

@@ -1,17 +1,15 @@
 (function(){
     angular.module('app')
-        .controller('MainController', ['PlayerService', 'TrainingMethods', 'GrandExchange', '$q', '$uibModal', '$document', MainController]);
+        .controller('MainController', ['PlayerService', 'TrainingMethods', 'GrandExchange', '$q', '$uibModal', '$document', '$http', MainController]);
 
-    function MainController(PlayerService, TrainingMethods, GrandExchange, $q, $uibModal, $document) {
+    function MainController(PlayerService, TrainingMethods, GrandExchange, $q, $uibModal, $document, $http) {
         var _ctrl = this;
-        _ctrl.tempName = "";
+
+        var defaultReverse = [ false, true, false, true, true, true, true ];
+
         _ctrl.activeSkill = false;
-        _ctrl.trainingMethods = [ ];
 
-        _ctrl.sortType = 7;
-        _ctrl.sortReverse = true;
-
-        _ctrl.player = PlayerService;
+        _ctrl.calcCollapsed = false;
 
         _ctrl.gphMults = [
             {
@@ -28,7 +26,110 @@
             }
         ];
 
+        _ctrl.player = PlayerService;
+
         _ctrl.setGph = 0;
+
+        _ctrl.sortType = 7;
+
+        _ctrl.sortReverse = true;
+
+        _ctrl.tempName = "";
+
+        _ctrl.trainingMethods = [ ];
+
+        _ctrl.calc = {
+            "current": {
+                "val": 1,
+                "lv": 1,
+                "xp": 0,
+                "isXp": false
+            },
+            "target": {
+                "val": 1,
+                "lv": 1,
+                "xp": 0,
+                "isXp": false
+            }
+        };
+
+        _ctrl.xpTable = false;
+
+        $http.get('data/experience-table.json').then(function(response) {
+            _ctrl.xpTable = response.data;
+        });
+
+        _ctrl.levelFromXp = function(exp) {
+            if(_ctrl.xpTable) {
+                for(var i = 1; i <= _ctrl.xpTable.length; i++) {
+                    if(_ctrl.xpTable[i] >= exp) {
+                        return i;
+                    }
+                }
+                return 126;
+            } else {
+                return -1;
+            }
+        };
+
+        var updateCalcWithHiscores = function() {
+            if(_ctrl.activeSkill) {
+                if (PlayerService.hiscores) {
+                    _ctrl.calc.current.lv = PlayerService.hiscores[_ctrl.activeSkill].level;
+                    _ctrl.calc.current.xp = PlayerService.hiscores[_ctrl.activeSkill].exp;
+                    _ctrl.calc.current.val = _ctrl.calc.current.xp;
+                    _ctrl.calc.current.isXp = true;
+
+                    _ctrl.calc.target.lv = Math.min(126, _ctrl.calc.current.lv + 1);
+                    _ctrl.calc.target.xp = _ctrl.calc.target.lv < 126 ? _ctrl.levelFromXp(_ctrl.calc.target.lv) : 200000000;
+                    _ctrl.calc.target.isXp = _ctrl.calc.target.lv >= 126;
+                    _ctrl.calc.target.val = _ctrl.calc.target.isXp ? _ctrl.calc.target.lv : _ctrl.calc.target.lv;
+                } else {
+                    _ctrl.calc.current.lv = 1;
+                    _ctrl.calc.current.xp = 0;
+                    _ctrl.calc.target.val = 1;
+                    _ctrl.calc.current.isXp = false;
+
+                    _ctrl.calc.target.lv = 2;
+                    _ctrl.calc.target.xp = 83;
+                    _ctrl.calc.target.val = 2;
+                    _ctrl.calc.target.isXp = false;
+                }
+            }
+        }
+
+        var playerHiscoreIsReady = function() {
+            return PlayerService.hiscores &&
+                _ctrl.activeSkill in PlayerService.hiscores;
+        };
+
+        _ctrl.updateSyncXpLv = function(target) {
+            var calc = _ctrl.calc[target];
+            if(calc) {
+                if(calc.isXp) {
+                    calc.xp = calc.val;
+                    calc.lv = _ctrl.levelFromXp(calc.val);
+                } else {
+                    calc.lv = calc.val; if(target === 'current' && playerHiscoreIsReady()) {
+                        calc.xp = PlayerService.hiscores[_ctrl.activeSkill].exp;
+                    } else {
+                        calc.xp = _ctrl.xpTable ? ( _ctrl.xpTable[calc.val] || 0 ) : -1;
+                    }
+                }
+            }
+        };
+
+        _ctrl.toggleXpLvDisplay = function(target) {
+            var calc = _ctrl.calc[target];
+            if(calc){
+                if(calc.isXp) {
+                    calc.val = calc.lv;
+                } else {
+                    calc.val = calc.xp;
+                }
+                calc.isXp = !calc.isXp;
+            }
+        };
 
         _ctrl.incrementGphMult = function() {
             var oldIncome = _ctrl.player.income * _ctrl.player.incomeMultiplier;
@@ -37,16 +138,17 @@
             _ctrl.player.income = oldIncome / _ctrl.gphMults[_ctrl.setGph].mult;
         };
 
-        _ctrl.updateName = function() {
+        _ctrl.hiscoreLookup = function() {
             PlayerService.name = _ctrl.tempName;
             PlayerService.updateHiscores();
+            updateCalcWithHiscores();
         };
 
         _ctrl.isReady = function() {
             return TrainingMethods.ready;
         };
 
-        _ctrl.getSkills = function() {
+        _ctrl.getSkillList = function() {
             return TrainingMethods.skills;
         };
 
@@ -55,13 +157,19 @@
         };
 
         _ctrl.setActive = function(skill) {
-            _ctrl.activeSkill = skill;
-            _ctrl.trainingMethods = TrainingMethods.trainingMethods[skill];
-            for(var i = 0; i < _ctrl.trainingMethods.length; i++) {
-                if(!_ctrl.trainingMethods[i].ready){
-                    _ctrl.trainingMethods[i].skill = skill;
-                    getInOutPrices(_ctrl.trainingMethods[i]);
+            if(skill === _ctrl.activeSkill) {
+                _ctrl.activeSkill = false;
+                _ctrl.trainingMethods = [ ];
+            } else {
+                _ctrl.activeSkill = skill;
+                _ctrl.trainingMethods = TrainingMethods.trainingMethods[skill];
+                for (var i = 0; i < _ctrl.trainingMethods.length; i++) {
+                    if (!_ctrl.trainingMethods[i].ready) {
+                        _ctrl.trainingMethods[i].skill = skill;
+                        getInOutPrices(_ctrl.trainingMethods[i]);
+                    }
                 }
+                updateCalcWithHiscores();
             }
         };
 
@@ -69,7 +177,7 @@
             $uibModal.open({
                 animation: true,
                 templateUrl: 'app/views/partials/modal-training-method.html',
-                controller: 'ModalInstanceCtrl',
+                controller: 'ModalInstanceController',
                 controllerAs: 'modalCtrl',
                 size: 'lg',
                 resolve: {
@@ -85,7 +193,7 @@
                 _ctrl.sortReverse = !_ctrl.sortReverse;
             } else {
                 _ctrl.sortType = sorter;
-                _ctrl.sortReverse = false;
+                _ctrl.sortReverse = defaultReverse[sorter - 1] || false;
             }
         };
 
@@ -116,22 +224,42 @@
             return value;
         };
 
+        _ctrl.calcCollapse = function() {
+            _ctrl.calcCollapsed = !_ctrl.calcCollapsed;
+        }
+
         function getInOutPrices(tm){
             var promises = [ ];
 
             if("inputs" in tm) {
                 for(var i = 0; i < tm.inputs.length; i++) {
-                    (function(item){promises.push(GrandExchange.getGuidePrice(item.id).then(function(response){
-                        item.price = response;
-                    }))})(tm.inputs[i]);
+                    (function(item){
+                        var result = GrandExchange.getGuidePrice(item.id);
+
+                        if("then" in result) {
+                            promises.push(result.then(function (response) {
+                                    item.price = response;
+                                }))
+                        } else {
+                            item.price = result;
+                        }
+                    })(tm.inputs[i]);
                 }
             }
 
             if("outputs" in tm) {
                 for(var o = 0; o < tm.outputs.length; o++) {
-                    (function(item){promises.push(GrandExchange.getGuidePrice(item.id).then(function(response){
-                        item.price = response;
-                    }))})(tm.outputs[o]);
+                    (function(item){
+                        var result = GrandExchange.getGuidePrice(item.id);
+
+                        if("then" in result) {
+                            promises.push(result.then(function(response) {
+                                item.price = response;
+                            }));
+                        } else {
+                            item.price = result;
+                        }
+                    })(tm.outputs[o]);
                 }
             }
 
@@ -155,7 +283,6 @@
                 }
 
                 tm.ready = true;
-                console.log(tm.name + ": Done!");
             });
         }
     }

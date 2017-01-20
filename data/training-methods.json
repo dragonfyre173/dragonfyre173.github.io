@@ -3,7 +3,9 @@
     {
       "name": "Green d'hide bodies",
       "actionsPerHour": 1650,
-      "level": 63,
+      "requirements": {
+        "Crafting": 63
+      },
       "experiencePerAction": 186,
       "inputs": [
         {
@@ -23,7 +25,9 @@
     {
       "name": "Blue d'hide bodies",
       "actionsPerHour": 1650,
-      "level": 71,
+      "requirements": {
+        "Crafting": 71
+      },
       "experiencePerAction": 210,
       "inputs": [
         {
@@ -43,7 +47,9 @@
     {
       "name": "Red d'hide bodies",
       "actionsPerHour": 1650,
-      "level": 77,
+      "requirements": {
+        "Crafting": 77
+      },
       "experiencePerAction": 234,
       "inputs": [
         {
@@ -63,7 +69,9 @@
     {
     "name": "Black d'hide bodies",
     "actionsPerHour": 1650,
-    "level": 84,
+    "requirements": {
+      "Crafting": 84
+    },
     "experiencePerAction": 258,
     "inputs": [
       {
@@ -83,7 +91,9 @@
     {
       "name": "Water battlestaves",
       "actionsPerHour": 2450,
-      "level": 54,
+      "requirements": {
+        "Crafting": 54
+      },
       "experiencePerAction": 100,
       "inputs": [
         {
@@ -108,7 +118,9 @@
     {
       "name": "Earth battlestaves",
       "actionsPerHour": 2450,
-      "level": 58,
+      "requirements": {
+        "Crafting": 58
+      },
       "experiencePerAction": 112.5,
       "inputs": [
         {
@@ -133,7 +145,9 @@
     {
       "name": "Fire battlestaves",
       "actionsPerHour": 2450,
-      "level": 62,
+      "requirements": {
+        "Crafting": 62
+      },
       "experiencePerAction": 125,
       "inputs": [
         {
@@ -158,7 +172,9 @@
     {
       "name": "Air battlestaves",
       "actionsPerHour": 2450,
-      "level": 66,
+      "requirements": {
+        "Crafting": 66
+      },
       "experiencePerAction": 137.5,
       "inputs": [
         {
@@ -179,13 +195,228 @@
           "qty": 1
         }
       ]
+    },
+    {
+      "name": "Unpowered orb",
+      "actionsPerHour": 1650,
+      "requirements": {
+        "Crafting": 46
+      },
+      "experiencePerAction": 52.5,
+      "inputs": [
+        {
+          "item": "Molten glass",
+          "id": 1775,
+          "qty": 1
+        }
+      ],
+      "outputs": [
+        {
+          "item": "Unpowered orb",
+          "id": 567,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "name": "Gold amulet (unstrung)",
+      "actionsPerHour": 1500,
+      "requirements": {
+        "Crafting": 8
+      },
+      "experiencePerAction": 30,
+      "inputs": [
+        {
+          "item": "Gold bar",
+          "id": 2357,
+          "qty": 1
+        }
+      ],
+      "outputs": [
+        {
+          "item": "Gold amulet (u)",
+          "id": 1673,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "name": "Cutting Sapphires",
+      "actionsPerHour": 2700,
+      "requirements": {
+        "Crafting": 20
+      },
+      "experiencePerAction": 50,
+      "inputs": [
+        {
+          "item": "Uncut sapphire",
+          "id": 1623,
+          "qty": 1
+        }
+      ],
+      "outputs": [
+        {
+          "item": "Sapphire",
+          "id": 1607,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "name": "Cutting Emeralds",
+      "actionsPerHour": 2700,
+      "requirements": {
+        "Crafting": 27
+      },
+      "experiencePerAction": 67.5,
+      "inputs": [
+        {
+          "item": "Uncut emerald",
+          "id": 1621,
+          "qty": 1
+        }
+      ],
+      "outputs": [
+        {
+          "item": "Emerald",
+          "id": 1605,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "name": "Cutting Rubies",
+      "actionsPerHour": 2700,
+      "requirements": {
+        "Crafting": 34
+      },
+      "experiencePerAction": 85,
+      "inputs": [
+        {
+          "item": "Uncut ruby",
+          "id": 1619,
+          "qty": 1
+        }
+      ],
+      "outputs": [
+        {
+          "item": "Ruby",
+          "id": 1603,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "name": "Cutting Diamonds",
+      "actionsPerHour": 2700,
+      "requirements": {
+        "Crafting": 43
+      },
+      "experiencePerAction": 107.5,
+      "inputs": [
+        {
+          "item": "Uncut diamond",
+          "id": 1617,
+          "qty": 1
+        }
+      ],
+      "outputs": [
+        {
+          "item": "Diamond",
+          "id": 1601,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "name": "Cutting Dragonstones",
+      "actionsPerHour": 2700,
+      "requirements": {
+        "Crafting": 55
+      },
+      "experiencePerAction": 137.5,
+      "inputs": [
+        {
+          "item": "Uncut dragonstone",
+          "id": 1631,
+          "qty": 1
+        }
+      ],
+      "outputs": [
+        {
+          "item": "Dragonstone",
+          "id": 1615,
+          "qty": 1
+        }
+      ]
+    }
+  ],
+  "Construction": [
+    {
+      "name": "Oak larders (lazy)",
+      "actionsPerHour": 500,
+      "experiencePerAction": 480,
+      "requirements": {
+        "Construction": 33
+      },
+      "inputs": [
+        {
+          "name": "Oak plank",
+          "id": 8778,
+          "qty": 8
+        }
+      ]
+    },
+    {
+      "name": "Oak larders (attentive)",
+      "actionsPerHour": 800,
+      "experiencePerAction": 480,
+      "requirements": {
+        "Construction": 33
+      },
+      "inputs": [
+        {
+          "name": "Oak plank",
+          "id": 8778,
+          "qty": 8
+        }
+      ]
+    },
+    {
+      "name": "Mahogany tables (lazy)",
+      "actionsPerHour": 500,
+      "experiencePerAction": 840,
+      "requirements": {
+        "Construction": 52
+      },
+      "inputs": [
+        {
+          "name": "Mahogany plank",
+          "id": 8782,
+          "qty": 6
+        }
+      ]
+    },
+    {
+      "name": "Mahogany tables (attentive)",
+      "actionsPerHour": 900,
+      "experiencePerAction": 840,
+      "requirements": {
+        "Construction": 52
+      },
+      "inputs": [
+        {
+          "name": "Mahogany plank",
+          "id": 8782,
+          "qty": 6
+        }
+      ]
     }
   ],
   "Prayer": [
     {
       "name": "Bones (Gilded altar)",
       "actionsPerHour": 1300,
-      "level": 1,
       "experiencePerAction": 15.75,
       "inputs": [
         {
@@ -198,7 +429,6 @@
     {
       "name": "Big bones (Gilded altar)",
       "actionsPerHour": 1300,
-      "level": 1,
       "experiencePerAction": 52.2,
       "inputs": [
         {
@@ -211,7 +441,6 @@
     {
       "name": "Babydragon bones (Gilded altar)",
       "actionsPerHour": 1300,
-      "level": 1,
       "experiencePerAction": 105,
       "inputs": [
         {
@@ -224,7 +453,6 @@
     {
       "name": "Wyvern bones (Gilded altar)",
       "actionsPerHour": 1300,
-      "level": 1,
       "experiencePerAction": 252,
       "inputs": [
         {
@@ -237,7 +465,6 @@
     {
       "name": "Dragon bones (Gilded altar)",
       "actionsPerHour": 1300,
-      "level": 1,
       "experiencePerAction": 252,
       "inputs": [
         {
@@ -250,7 +477,6 @@
     {
       "name": "Lava dragon bones (Gilded altar)",
       "actionsPerHour": 1300,
-      "level": 1,
       "experiencePerAction": 297.5,
       "inputs": [
         {
@@ -263,7 +489,6 @@
     {
       "name": "Dagannoth bones (Gilded altar)",
       "actionsPerHour": 1300,
-      "level": 1,
       "experiencePerAction": 437.5,
       "inputs": [
         {
@@ -276,7 +501,6 @@
     {
       "name": "Ourg bones (Gilded altar)",
       "actionsPerHour": 1300,
-      "level": 1,
       "experiencePerAction": 490,
       "inputs": [
         {
@@ -289,7 +513,6 @@
     {
       "name": "Reanimate Goblin",
       "actionsPerHour": 200,
-      "level": 1,
       "experiencePerAction": 130,
       "inputs": [
         {
@@ -312,7 +535,9 @@
     {
       "name": "Reanimate Monkey",
       "actionsPerHour": 200,
-      "level": 1,
+      "requirements": {
+        "Magic": 7
+      },
       "experiencePerAction": 182,
       "inputs": [
         {
@@ -335,7 +560,9 @@
     {
       "name": "Reanimate Imp",
       "actionsPerHour": 200,
-      "level": 1,
+      "requirements": {
+        "Magic": 12
+      },
       "experiencePerAction": 286,
       "inputs": [
         {
@@ -358,7 +585,9 @@
     {
       "name": "Reanimate Minotaur",
       "actionsPerHour": 200,
-      "level": 1,
+      "requirements": {
+        "Magic": 16
+      },
       "experiencePerAction": 364,
       "inputs": [
         {
@@ -381,7 +610,9 @@
     {
       "name": "Reanimate Scorpion",
       "actionsPerHour": 200,
-      "level": 1,
+      "requirements": {
+        "Magic": 19
+      },
       "experiencePerAction": 454,
       "inputs": [
         {
@@ -404,7 +635,9 @@
     {
       "name": "Reanimate Bear",
       "actionsPerHour": 200,
-      "level": 1,
+      "requirements": {
+        "Magic": 21
+      },
       "experiencePerAction": 480,
       "inputs": [
         {
@@ -432,7 +665,9 @@
     {
       "name": "Reanimate Unicorn",
       "actionsPerHour": 200,
-      "level": 1,
+      "requirements": {
+        "Magic": 22
+      },
       "experiencePerAction": 494,
       "inputs": [
         {
@@ -460,7 +695,9 @@
     {
       "name": "Reanimate Dog",
       "actionsPerHour": 200,
-      "level": 1,
+      "requirements": {
+        "Magic": 26
+      },
       "experiencePerAction": 520,
       "inputs": [
         {
@@ -488,7 +725,9 @@
     {
       "name": "Reanimate Chaos Druid",
       "actionsPerHour": 200,
-      "level": 1,
+      "requirements": {
+        "Magic": 30
+      },
       "experiencePerAction": 584,
       "inputs": [
         {
@@ -516,7 +755,9 @@
     {
       "name": "Reanimate Giant",
       "actionsPerHour": 200,
-      "level": 1,
+      "requirements": {
+        "Magic": 37
+      },
       "experiencePerAction": 650,
       "inputs": [
         {
@@ -544,7 +785,9 @@
     {
       "name": "Reanimate Ogre",
       "actionsPerHour": 200,
-      "level": 1,
+      "requirements": {
+        "Magic": 40
+      },
       "experiencePerAction": 716,
       "inputs": [
         {
@@ -572,7 +815,9 @@
     {
       "name": "Reanimate Elf",
       "actionsPerHour": 200,
-      "level": 1,
+      "requirements": {
+        "Magic": 43
+      },
       "experiencePerAction": 754,
       "inputs": [
         {
@@ -600,7 +845,9 @@
     {
       "name": "Reanimate Troll",
       "actionsPerHour": 200,
-      "level": 1,
+      "requirements": {
+        "Magic": 46
+      },
       "experiencePerAction": 780,
       "inputs": [
         {
@@ -628,7 +875,9 @@
     {
       "name": "Reanimate Horror",
       "actionsPerHour": 200,
-      "level": 1,
+      "requirements": {
+        "Magic": 52
+      },
       "experiencePerAction": 832,
       "inputs": [
         {
@@ -656,7 +905,9 @@
     {
       "name": "Reanimate Kalphite",
       "actionsPerHour": 200,
-      "level": 1,
+      "requirements": {
+        "Magic": 57
+      },
       "experiencePerAction": 884,
       "inputs": [
         {
@@ -684,7 +935,9 @@
     {
       "name": "Reanimate Dagannoth",
       "actionsPerHour": 200,
-      "level": 1,
+      "requirements": {
+        "Magic": 62
+      },
       "experiencePerAction": 936,
       "inputs": [
         {
@@ -712,7 +965,9 @@
     {
       "name": "Reanimate Bloodveld",
       "actionsPerHour": 200,
-      "level": 1,
+      "requirements": {
+        "Magic": 65
+      },
       "experiencePerAction": 1040,
       "inputs": [
         {
@@ -740,7 +995,9 @@
     {
       "name": "Reanimate TzHaar",
       "actionsPerHour": 200,
-      "level": 1,
+      "requirements": {
+        "Magic": 69
+      },
       "experiencePerAction": 1104,
       "inputs": [
         {
@@ -768,7 +1025,9 @@
     {
       "name": "Reanimate Demon",
       "actionsPerHour": 200,
-      "level": 1,
+      "requirements": {
+        "Magic": 72
+      },
       "experiencePerAction": 1170,
       "inputs": [
         {
@@ -796,7 +1055,9 @@
     {
       "name": "Reanimate Aviansie",
       "actionsPerHour": 200,
-      "level": 1,
+      "requirements": {
+        "Magic": 78
+      },
       "experiencePerAction": 1234,
       "inputs": [
         {
@@ -824,7 +1085,9 @@
     {
       "name": "Reanimate Abyssal Creature",
       "actionsPerHour": 200,
-      "level": 1,
+      "requirements": {
+        "Magic": 85
+      },
       "experiencePerAction": 1300,
       "inputs": [
         {
@@ -852,7 +1115,9 @@
     {
       "name": "Reanimate Dragon",
       "actionsPerHour": 200,
-      "level": 1,
+      "requirements": {
+        "Magic": 93
+      },
       "experiencePerAction": 1560,
       "inputs": [
         {

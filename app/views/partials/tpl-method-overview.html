@@ -4,9 +4,9 @@
         <div class="col-sm-2"></div>
         <div class="col-sm-4">
             <div class="input-group">
-                <input type="text" class="form-control" contenteditable="false" placeholder="Hiscore Lookup Not Yet Implemented" ng-submit="mainCtrl.updateStats()" ng-model="mainCtrl.tempName">
+                <input type="text" class="form-control" placeholder="Hiscore lookup" ng-submit="mainCtrl.updateStats()" ng-model="mainCtrl.tempName">
                 <span class="input-group-btn">
-                        <button class="btn btn-default" type="button" ng-click="mainCtrl.updateName()">Update Stats</button>
+                        <button class="btn btn-default" type="button" ng-click="mainCtrl.hiscoreLookup()">Update Stats</button>
                     </span>
             </div>
         </div>
@@ -30,13 +30,57 @@
         <!-- Skill list toolbar -->
         <div class="row text-center">
             <div class="btn-group">
-                <button ng-repeat="skill in mainCtrl.getSkills()" type="button" class="btn btn-default" ng-class="{ 'active': mainCtrl.isActive(skill) }" ng-click="mainCtrl.setActive(skill)">
+                <button ng-repeat="skill in mainCtrl.getSkillList()" type="button" class="btn btn-default" ng-class="{ 'active': mainCtrl.isActive(skill) }" ng-click="mainCtrl.setActive(skill)">
                     <image width="100%" height="100%" ng-src="img/{{skill}}.png">
                 </button>
             </div>
         </div>
         <br/>
+        <!-- Skill training method overview -->
         <div ng-show="mainCtrl.activeSkill">
+            <!-- Calculator input -->
+            <div class="panel-group">
+                <div class="panel panel-default">
+                    <div class="panel-heading text-center">
+                        <h4 class="panel-title">
+                            <a href ng-click="mainCtrl.calcCollapse()">{{mainCtrl.activeSkill}} Calculator
+                                <span ng-show="mainCtrl.calcCollapsed" class="glyphicon glyphicon-triangle-bottom"></span>
+                                <span ng-show="!mainCtrl.calcCollapsed" class="glyphicon glyphicon-triangle-top"></span>
+                            </a>
+                        </h4>
+                    </div>
+                    <div class="panel-body" uib-collapse="mainCtrl.calcCollapsed">
+                        <div class="container">
+                            <div class="col-md-1"></div>
+                            <!-- Current Input -->
+                            <div class="col-md-5">
+                                <div class="input-group">
+                                    <span class="input-group-addon">Current</span>
+                                    <span class="input-group-btn">
+                                        <label class="btn btn-default" ng-click="mainCtrl.toggleXpLvDisplay('current')">
+                                            {{mainCtrl.calc.current.isXp ? 'XP' : 'LV'}}
+                                        </label>
+                                    </span>
+                                    <input type="number" min="0" max="200000000" step="1" class="form-control" ng-model="mainCtrl.calc.current.val">
+                                </div>
+                            </div>
+                            <!-- Target Input -->
+                            <div class="col-md-5">
+                                <div class="input-group">
+                                    <span class="input-group-addon">Target</span>
+                                    <span class="input-group-btn">
+                                        <label class="btn btn-default" ng-click="mainCtrl.toggleXpLvDisplay('target')">
+                                            {{mainCtrl.calc.target.isXp ? 'XP' : 'LV'}}
+                                        </label>
+                                    </span>
+                                    <input type="number" min="0" max="200000000" step="1" class="form-control" ng-model="mainCtrl.calc.target.val">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Training method panel -->
             <div class="panel panel-default">
                 <div class="panel-heading text-center"><h4>{{mainCtrl.activeSkill}} Training</h4></div>
                 <table class="table table-striped table-bordered">
