@@ -53,23 +53,10 @@
             }
         };
 
-        _ctrl.xpTable = false;
+        _ctrl.virtualLevels = false;
 
-        $http.get('data/experience-table.json').then(function(response) {
-            _ctrl.xpTable = response.data;
-        });
-
-        _ctrl.levelFromXp = function(exp) {
-            if(_ctrl.xpTable) {
-                for(var i = 1; i <= _ctrl.xpTable.length; i++) {
-                    if(_ctrl.xpTable[i] >= exp) {
-                        return i;
-                    }
-                }
-                return 126;
-            } else {
-                return -1;
-            }
+        _ctrl.maxLevel = function() {
+            return _ctrl.virtualLevels ? 126 : 99;
         };
 
         var updateCalcWithHiscores = function() {
@@ -80,9 +67,9 @@
                     _ctrl.calc.current.val = _ctrl.calc.current.xp;
                     _ctrl.calc.current.isXp = true;
 
-                    _ctrl.calc.target.lv = Math.min(126, _ctrl.calc.current.lv + 1);
-                    _ctrl.calc.target.xp = _ctrl.calc.target.lv < 126 ? _ctrl.levelFromXp(_ctrl.calc.target.lv) : 200000000;
-                    _ctrl.calc.target.isXp = _ctrl.calc.target.lv >= 126;
+                    _ctrl.calc.target.lv = Math.min(_ctrl.maxLevel(), _ctrl.calc.current.lv + 1);
+                    _ctrl.calc.target.xp = _ctrl.calc.target.lv < PlayerService.xpTable.length ? PlayerService.xpTable[_ctrl.calc.target.lv] : 200000000;
+                    _ctrl.calc.target.isXp = _ctrl.calc.target.lv >= _ctrl.maxLevel();
                     _ctrl.calc.target.val = _ctrl.calc.target.isXp ? _ctrl.calc.target.lv : _ctrl.calc.target.lv;
                 } else {
                     _ctrl.calc.current.lv = 1;
@@ -108,12 +95,13 @@
             if(calc) {
                 if(calc.isXp) {
                     calc.xp = calc.val;
-                    calc.lv = _ctrl.levelFromXp(calc.val);
+                    calc.lv = PlayerService.levelFromXp(calc.val);
                 } else {
-                    calc.lv = calc.val; if(target === 'current' && playerHiscoreIsReady()) {
+                    calc.lv = calc.val; 
+                    if(target === 'current' && playerHiscoreIsReady()) {
                         calc.xp = PlayerService.hiscores[_ctrl.activeSkill].exp;
                     } else {
-                        calc.xp = _ctrl.xpTable ? ( _ctrl.xpTable[calc.val] || 0 ) : -1;
+                        calc.xp = PlayerService.xpTable ? ( PlayerService.xpTable[calc.val] || 0 ) : -1;
                     }
                 }
             }

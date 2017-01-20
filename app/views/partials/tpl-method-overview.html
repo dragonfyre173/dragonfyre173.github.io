@@ -61,7 +61,7 @@
                                             {{mainCtrl.calc.current.isXp ? 'XP' : 'LV'}}
                                         </label>
                                     </span>
-                                    <input type="number" min="0" max="200000000" step="1" class="form-control" ng-model="mainCtrl.calc.current.val">
+                                    <input required type="text" custom-min="0" custom-max="200000000" class="form-control" number-input ng-model="mainCtrl.calc.current.val" ng-change="mainCtrl.updateSyncXpLv('current')">
                                 </div>
                             </div>
                             <!-- Target Input -->
@@ -73,7 +73,7 @@
                                             {{mainCtrl.calc.target.isXp ? 'XP' : 'LV'}}
                                         </label>
                                     </span>
-                                    <input type="number" min="0" max="200000000" step="1" class="form-control" ng-model="mainCtrl.calc.target.val">
+                                    <input required type="text" custom-min="{{mainCtrl.calc.target.isXp ? mainCtrl.calc.current.xp : mainCtrl.calc.current.lv}}" custom-max="200000000" number-input class="form-control" ng-model="mainCtrl.calc.target.val" ng-change="mainCtrl.updateSyncXpLv('target')">
                                 </div>
                             </div>
                         </div>
