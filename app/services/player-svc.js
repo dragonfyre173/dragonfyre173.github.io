@@ -47,6 +47,10 @@
             hiscores: false
         };
 
+        _service.getIncome = function() {
+            return _service.income * _service.incomeMultiplier;
+        }
+
         _factory.baseUrl = "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20csv%20where%20url%3D'http%3A%2F%2Fservices.runescape.com%2Fm%3Dhiscore_oldschool%2Findex_lite.ws%3Fplayer%3D{0}'&format=json&diagnostics=true&callback=";
 
         _service.xpTable = false;
@@ -98,18 +102,6 @@
 
             return queryResults.promise;
         };
-
-        _service.getProductivity = function(tm) {
-            // 1. Calculate total cost (or profit) per hour of training method
-            var costPerHour = tm.profit * tm.actionsPerHour;
-            // 2. Calculate ratio of total hours spent per hour of training
-            // Subtracting, because positive income = fewer hours of work
-            var incomeCostRatio = 1 - (costPerHour / (_service.income * _service.incomeMultiplier));
-            // 3. Calculate effective XP per hour
-            var xph = tm.experiencePerAction * tm.actionsPerHour;
-            var effectiveXph = xph / incomeCostRatio;
-            return effectiveXph;
-        }
 
         return _service;
     }

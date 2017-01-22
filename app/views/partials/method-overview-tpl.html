@@ -86,26 +86,34 @@
                 <table class="table table-striped table-bordered">
                     <thead>
                     <th sorted-column ctrl="mainCtrl" column-name="Method" sort-name="name" class="text-center col-sm-3"></th>
-                    <th sorted-column ctrl="mainCtrl" column-name="XP" sort-name="exp" class="text-center col-sm-1"></th>
-                    <th sorted-column ctrl="mainCtrl" column-name="Profit" sort-name="profit" class="text-center col-sm-1"></th>
-                    <th sorted-column ctrl="mainCtrl" column-name="GP/XP" sort-name="gpxp" class="text-center col-sm-1"></th>
-                    <th sorted-column ctrl="mainCtrl" column-name="XP/hr" sort-name="xphr" class="text-center col-sm-1"></th>
-                    <th sorted-column ctrl="mainCtrl" column-name="Effective XP/hr" sort-name="adjustedxphr" class="text-center col-sm-2" uib-tooltip="EXP/hr adjusted based on your income. See the about page for how it's calculated." tooltip-append-to-body="true" has-tooltip="true"></th>
+                    <th sorted-column ctrl="mainCtrl" column-name="GP/XP" sort-name="gpxp" class="text-right col-sm-1"></th>
+                    <th sorted-column ctrl="mainCtrl" column-name="XP/hr" sort-name="xphr" class="text-right col-sm-1"></th>
                     <th sorted-column ctrl="mainCtrl" column-name="Needed" sort-name="needed" class="text-right col-sm-1"></th>
-                    <th sorted-column ctrl="mainCtrl" column-name="Ttl. Profit" sort-name="total" class="text-right col-sm-1"></th>
-                    <th sorted-column ctrl="mainCtrl" column-name="Eff. ETA" sort-name="eta" class="text-right col-sm-1"></th>
+                    <th sorted-column ctrl="mainCtrl" column-name="Profit" sort-name="total" class="text-right col-sm-1"></th>
+                    <th sorted-column ctrl="mainCtrl" column-name="Raw ETA" sort-name="raweta" class="text-right col-sm-1"></th>
+                    <th sorted-column ctrl="mainCtrl" column-name="Eff. ETA" sort-name="effeta" class="text-right col-sm-2" uib-tooltip="On training methods that lose money, this adds how long you'll spend making that money back." tooltip-append-to-body="true" has-tooltip="true"></th>
+                    <th sorted-column ctrl="mainCtrl" column-name="Eff. GP/hr" sort-name="effgph" class="text-right col-sm-1"></th>
+                    <th sorted-column ctrl="mainCtrl" column-name="Eff. XP/hr" sort-name="effxph" class="text-right col-sm-1"></th>
                     </thead>
                     <tbody>
                     <tr ng-repeat="method in mainCtrl.trainingMethods | orderBy:mainCtrl.trainingMethodOrder:mainCtrl.sortReverse" class="text-right">
-                        <td class="text-center"> <a href="" ng-click="mainCtrl.detailMethod(method)"><span class="glyphicon glyphicon-info-sign pull-left"></span></a>{{method.name}}</td>
-                        <td>{{method.experiencePerAction | number}}</td>
-                        <td><span ng-if="method.ready">{{method.profit | number}}</span></td>
+                        <td class="text-center">
+                            <a href="" ng-click="mainCtrl.detailMethod(method)">
+                                <span class="glyphicon glyphicon-info-sign pull-left"></span>
+                            </a>
+                            {{method.name}}
+                            <a href="" ng-click="mainCtrl.updatePrices(method, true)">
+                                <span class="glyphicon glyphicon-refresh pull-right"></span>
+                            </a>
+                        </td>
                         <td><span ng-if="method.ready">{{method.profit / method.experiencePerAction | number : 2}}</span></td>
                         <td>{{method.experiencePerAction * method.actionsPerHour | number}}</td>
-                        <td><span ng-if="method.ready">{{mainCtrl.player.getProductivity(method) | number : 0}}</span></td>
                         <td>{{mainCtrl.getActionsToGoal(method) | number : 0}}</span></td>
                         <td><span ng-if="method.ready">{{mainCtrl.getProfitToGoal(method) | number : 0}}</span></td>
-                        <td>{{mainCtrl.getHoursToGoal(method) | number : 1}} hrs</td>
+                        <td><span ng-if="method.ready">{{mainCtrl.getActionsToGoal(method) / method.actionsPerHour | number : 1}} hrs</span></td>
+                        <td><span ng-if="method.ready">{{mainCtrl.getHoursToGoal(method) | number : 1}} hrs  (+{{ (mainCtrl.getHoursToGoal(method) - (mainCtrl.getActionsToGoal(method) / method.actionsPerHour)) | number : 1}})</span></td>
+                        <td><span ng-if="method.ready">{{mainCtrl.getEffectiveGpPerHour(method) | number : 0}}</span></td>
+                        <td><span ng-if="method.ready">{{mainCtrl.getEffectiveXpPerHour(method) | number : 0}}</span></td>
                     </tr>
                     </tbody>
                 </table>

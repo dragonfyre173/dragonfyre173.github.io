@@ -20,9 +20,9 @@
 
         _factory.guide = "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20json%20where%20url%3D'https%3A%2F%2Fapi.rsbuddy.com%2FgrandExchange%3Fa%3DguidePrice%26i%3D{0}'&format=json&callback=";
 
-        _service.getGuidePrice = function(item) {
+        _service.getGuidePrice = function(item, forceUpdate) {
 
-            if(item in _factory.cached) {
+            if(!forceUpdate && item in _factory.cached) {
                 return _factory.cached[item];
             } else {
                 var counter = 0;

@@ -1,19 +1,9 @@
-(function(){
+(function () {
     angular.module('app')
         .controller('MainController', ['PlayerService', 'TrainingMethods', 'GrandExchange', '$q', '$uibModal', '$document', '$http', MainController]);
 
     function MainController(PlayerService, TrainingMethods, GrandExchange, $q, $uibModal, $document, $http) {
         var _ctrl = this;
-
-        var defaultReverse = {
-            "name": false,
-            "exp": true,
-            "lvl": false,
-            "profit": true,
-            "gpxp": true,
-            "xphr": true,
-            "adjustedxphr": true
-        };
 
         _ctrl.activeSkill = false;
 
@@ -44,7 +34,7 @@
 
         _ctrl.tempName = "";
 
-        _ctrl.trainingMethods = [ ];
+        _ctrl.trainingMethods = [];
 
         _ctrl.calc = {
             "current": {
@@ -58,17 +48,21 @@
                 "lv": 1,
                 "xp": 0,
                 "isXp": false
+            },
+            "xpToGoal": function () {
+                return Math.max(_ctrl.calc.target.xp - _ctrl.calc.current.xp, 0)
             }
         };
 
+
         _ctrl.virtualLevels = false;
 
-        _ctrl.maxLevel = function() {
+        _ctrl.maxLevel = function () {
             return _ctrl.virtualLevels ? 126 : 99;
         };
 
-        var updateCalcWithHiscores = function() {
-            if(_ctrl.activeSkill) {
+        var updateCalcWithHiscores = function () {
+            if (_ctrl.activeSkill) {
                 if (PlayerService.hiscores) {
                     _ctrl.calc.current.lv = PlayerService.hiscores[_ctrl.activeSkill].level;
                     _ctrl.calc.current.xp = PlayerService.hiscores[_ctrl.activeSkill].exp;
@@ -93,20 +87,20 @@
             }
         }
 
-        var playerHiscoreIsReady = function() {
+        var playerHiscoreIsReady = function () {
             return PlayerService.hiscores &&
                 _ctrl.activeSkill in PlayerService.hiscores;
         };
 
-        _ctrl.updateSyncXpLv = function(target) {
+        _ctrl.updateSyncXpLv = function (target) {
             var calc = _ctrl.calc[target];
-            if(calc) {
-                if(calc.isXp) {
+            if (calc) {
+                if (calc.isXp) {
                     calc.xp = calc.val;
                     calc.lv = PlayerService.levelFromXp(calc.val);
                 } else {
-                    calc.lv = calc.val; 
-                    if(target === 'current' && playerHiscoreIsReady()) {
+                    calc.lv = calc.val;
+                    if (target === 'current' && playerHiscoreIsReady()) {
                         calc.xp = PlayerService.hiscores[_ctrl.activeSkill].exp;
                     } else {
                         calc.xp = PlayerService.xpTable ? ( PlayerService.xpTable[calc.val] || 0 ) : -1;
@@ -115,10 +109,10 @@
             }
         };
 
-        _ctrl.toggleXpLvDisplay = function(target) {
+        _ctrl.toggleXpLvDisplay = function (target) {
             var calc = _ctrl.calc[target];
-            if(calc){
-                if(calc.isXp) {
+            if (calc) {
+                if (calc.isXp) {
                     calc.val = calc.lv;
                 } else {
                     calc.val = calc.xp;
@@ -127,49 +121,49 @@
             }
         };
 
-        _ctrl.incrementGphMult = function() {
-            var oldIncome = _ctrl.player.income * _ctrl.player.incomeMultiplier;
+        _ctrl.incrementGphMult = function () {
+            var oldIncome = _ctrl.player.getIncome();
             _ctrl.setGph = (_ctrl.setGph + 1) % 3;
             _ctrl.player.incomeMultiplier = _ctrl.gphMults[_ctrl.setGph].mult;
             _ctrl.player.income = oldIncome / _ctrl.gphMults[_ctrl.setGph].mult;
         };
 
-        _ctrl.hiscoreLookup = function() {
+        _ctrl.hiscoreLookup = function () {
             PlayerService.name = _ctrl.tempName;
             PlayerService.updateHiscores();
             updateCalcWithHiscores();
         };
 
-        _ctrl.isReady = function() {
+        _ctrl.isReady = function () {
             return TrainingMethods.ready;
         };
 
-        _ctrl.getSkillList = function() {
+        _ctrl.getSkillList = function () {
             return TrainingMethods.skills;
         };
 
-        _ctrl.isActive = function(skill) {
+        _ctrl.isActive = function (skill) {
             return _ctrl.activeSkill == skill
         };
 
-        _ctrl.setActive = function(skill) {
-            if(skill === _ctrl.activeSkill) {
+        _ctrl.setActive = function (skill) {
+            if (skill === _ctrl.activeSkill) {
                 _ctrl.activeSkill = false;
-                _ctrl.trainingMethods = [ ];
+                _ctrl.trainingMethods = [];
             } else {
                 _ctrl.activeSkill = skill;
                 _ctrl.trainingMethods = TrainingMethods.trainingMethods[skill];
                 for (var i = 0; i < _ctrl.trainingMethods.length; i++) {
                     if (!_ctrl.trainingMethods[i].ready) {
                         _ctrl.trainingMethods[i].skill = skill;
-                        getInOutPrices(_ctrl.trainingMethods[i]);
+                        _ctrl.updatePrices(_ctrl.trainingMethods[i], false);
                     }
                 }
                 updateCalcWithHiscores();
             }
         };
 
-        _ctrl.detailMethod = function (tm) {
+        _ctrl.detailMethod = function (trainingMethod) {
             $uibModal.open({
                 animation: true,
                 templateUrl: 'app/views/partials/modal-training-method.html',
@@ -177,25 +171,25 @@
                 controllerAs: 'modalCtrl',
                 size: 'lg',
                 resolve: {
-                    trainingMethod: function() {
-                        return tm;
+                    trainingMethod: function () {
+                        return trainingMethod;
                     }
                 }
             });
         };
 
-        _ctrl.setSort = function(sorter) {
-            if(_ctrl.sortType == sorter) {
+        _ctrl.setSort = function (sorter) {
+            if (_ctrl.sortType == sorter) {
                 _ctrl.sortReverse = !_ctrl.sortReverse;
             } else {
                 _ctrl.sortType = sorter;
-                _ctrl.sortReverse = defaultReverse[sorter] || false;
+                _ctrl.sortReverse = false;
             }
         };
 
-        _ctrl.trainingMethodOrder = function(entry){
+        _ctrl.trainingMethodOrder = function (entry) {
             var value;
-            switch(_ctrl.sortType) {
+            switch (_ctrl.sortType) {
                 case 'exp':
                     value = entry.experiencePerAction;
                     break;
@@ -212,8 +206,7 @@
                     value = entry.experiencePerAction * entry.actionsPerHour;
                     break;
                 case 'adjustedxphr':
-                case 'eta':
-                    value = PlayerService.getProductivity(entry);
+                    value = _ctrl.getProductivity(entry);
                     break;
                 case 'total':
                     value = _ctrl.getProfitToGoal(entry);
@@ -221,86 +214,125 @@
                 case 'needed':
                     value = _ctrl.getActionsToGoal(entry);
                     break;
+                case 'effeta':
+                    value = _ctrl.getHoursToGoal(entry);
+                    break;
+                case 'raweta':
+                    value = _ctrl.getActionsToGoal(entry) / entry.actionsPerHour;
+                    break;
+                case 'effgph':
+                    value = _ctrl.getEffectiveGpPerHour(entry);
+                    break;
+                case 'effxph':
+                    value = _ctrl.getEffectiveXpPerHour(entry);
+                    break;
                 default:
                     value = entry.name;
             }
             return value;
         };
 
-        _ctrl.calcCollapse = function() {
+        _ctrl.calcCollapse = function () {
             _ctrl.calcCollapsed = !_ctrl.calcCollapsed;
         }
 
-        _ctrl.getActionsToGoal = function(trainingMethod) {
-            return Math.max(0, Math.ceil((_ctrl.calc.target.xp - _ctrl.calc.current.xp) / trainingMethod.experiencePerAction));
+        _ctrl.getActionsToGoal = function (trainingMethod) {
+            return Math.max(0, Math.ceil(_ctrl.calc.xpToGoal() / trainingMethod.experiencePerAction));
         };
 
-        _ctrl.getProfitToGoal = function(trainingMethod) {
+        _ctrl.getProfitToGoal = function (trainingMethod) {
             return trainingMethod.profit * _ctrl.getActionsToGoal(trainingMethod);
         };
 
-        _ctrl.getHoursToGoal = function(trainingMethod) {
-            var _hours = (_ctrl.calc.target.xp - _ctrl.calc.current.xp) / PlayerService.getProductivity(trainingMethod);
-
-            return _hours;
+        _ctrl.getHoursToGoal = function (trainingMethod) {
+            var actionsNeeded = _ctrl.calc.xpToGoal() / trainingMethod.experiencePerAction;
+            var hrsTraining = actionsNeeded / trainingMethod.actionsPerHour;
+            var hrsProfit = Math.max(0, actionsNeeded * trainingMethod.profit * -1 / PlayerService.getIncome());
+            return hrsTraining + hrsProfit;
         };
 
-        function getInOutPrices(tm){
-            var promises = [ ];
+        _ctrl.getProductivity = function (trainingMethod) {
+            return _ctrl.calc.xpToGoal() / _ctrl.getHoursToGoal(trainingMethod);
+        };
 
-            if("inputs" in tm) {
-                for(var i = 0; i < tm.inputs.length; i++) {
-                    (function(item){
-                        var result = GrandExchange.getGuidePrice(item.id);
+        _ctrl.getEffectiveGpPerHour = function (trainingMethod) {
+            // Finding this was REALLY fun
+            // Note that as income approaches zero, effective GP/hr tanks
 
-                        if("then" in result) {
+            var i = PlayerService.getIncome();
+            var p = trainingMethod.profit;
+            var a = trainingMethod.actionsPerHour;
+
+            return p < 0 ? p / ((1 / a) - (p / i)) : p * a;
+        };
+
+        _ctrl.getEffectiveXpPerHour = function(trainingMethod) {
+            // This was a byproduct of finding the above
+            // As i -> infinity, if p < 0, the lhs approaches xa
+            var x = trainingMethod.experiencePerAction;
+            var i = PlayerService.getIncome();
+            var p = trainingMethod.profit;
+            var a = trainingMethod.actionsPerHour;
+
+            return p < 0 ? x / ((1 / a) - (p / i)) : x * a;
+        };
+
+        _ctrl.updatePrices = function (trainingMethod, forceUpdate) {
+            var promises = [];
+
+            if ("inputs" in trainingMethod) {
+                for (var i = 0; i < trainingMethod.inputs.length; i++) {
+                    (function (item) {
+                        var result = GrandExchange.getGuidePrice(item.id, forceUpdate);
+
+                        if ("then" in result) {
                             promises.push(result.then(function (response) {
-                                    item.price = response;
-                                }))
+                                item.price = response;
+                            }))
                         } else {
                             item.price = result;
                         }
-                    })(tm.inputs[i]);
+                    })(trainingMethod.inputs[i]);
                 }
             }
 
-            if("outputs" in tm) {
-                for(var o = 0; o < tm.outputs.length; o++) {
-                    (function(item){
-                        var result = GrandExchange.getGuidePrice(item.id);
+            if ("outputs" in trainingMethod) {
+                for (var o = 0; o < trainingMethod.outputs.length; o++) {
+                    (function (item) {
+                        var result = GrandExchange.getGuidePrice(item.id, forceUpdate);
 
-                        if("then" in result) {
-                            promises.push(result.then(function(response) {
+                        if ("then" in result) {
+                            promises.push(result.then(function (response) {
                                 item.price = response;
                             }));
                         } else {
                             item.price = result;
                         }
-                    })(tm.outputs[o]);
+                    })(trainingMethod.outputs[o]);
                 }
             }
 
-            return $q.all(promises).then(function(){
+            return $q.all(promises).then(function () {
                 // All item prices have been retrieved by now
-                tm.profit = 0;
-                tm.gross = 0;
-                tm.cost = 0;
+                trainingMethod.profit = 0;
+                trainingMethod.gross = 0;
+                trainingMethod.cost = 0;
 
-                if("inputs" in tm) {
-                    for (var input = 0; input < tm.inputs.length; input++) {
-                        tm.profit -= tm.inputs[input].qty * tm.inputs[input].price;
-                        tm.cost -= tm.inputs[input].qty * tm.inputs[input].price;
+                if ("inputs" in trainingMethod) {
+                    for (var input = 0; input < trainingMethod.inputs.length; input++) {
+                        trainingMethod.profit -= trainingMethod.inputs[input].qty * trainingMethod.inputs[input].price;
+                        trainingMethod.cost -= trainingMethod.inputs[input].qty * trainingMethod.inputs[input].price;
                     }
                 }
-                if("outputs" in tm) {
-                    for (var output = 0; output < tm.outputs.length; output++) {
-                        tm.profit += tm.outputs[output].qty * tm.outputs[output].price;
-                        tm.gross += tm.outputs[output].qty * tm.outputs[output].price;
+                if ("outputs" in trainingMethod) {
+                    for (var output = 0; output < trainingMethod.outputs.length; output++) {
+                        trainingMethod.profit += trainingMethod.outputs[output].qty * trainingMethod.outputs[output].price;
+                        trainingMethod.gross += trainingMethod.outputs[output].qty * trainingMethod.outputs[output].price;
                     }
                 }
 
-                tm.ready = true;
+                trainingMethod.ready = true;
             });
-        }
+        };
     }
 })();

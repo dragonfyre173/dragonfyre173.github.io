@@ -1,104 +1,160 @@
 {
+  "Fletching": [
+    {
+      "name": "Maple longbows (Cut only)",
+      "actionsPerHour": 1400,
+      "experiencePerAction": 58.3,
+      "requirements": {
+        "Fletching": 55
+      },
+      "inputs": [
+        {
+          "name": "Maple logs",
+          "id": 1517,
+          "qty": 1
+        }
+      ],
+      "outputs": [
+        {
+          "name": "Maple longbow (u)",
+          "id": 62,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "name": "Maple longbows (String only)",
+      "actionsPerHour": 1700,
+      "experiencePerAction": 58.3,
+      "requirements": {
+        "Fletching": 55
+      },
+      "inputs": [
+        {
+          "name": "Maple longbow (u)",
+          "id": 62,
+          "qty": 1
+        },
+        {
+          "name": "Bow string",
+          "id": 1777,
+          "qty": 1
+        }
+      ],
+      "outputs": [
+        {
+          "name": "Maple longbow",
+          "id": 851,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "name": "Maple longbows (Cut and String)",
+      "actionsPerHour": 1550,
+      "experiencePerAction": 58.3,
+      "requirements": {
+        "Fletching": 55
+      },
+      "inputs": [
+        {
+          "name": "Maple logs",
+          "id": 1517,
+          "qty": 1
+        },
+        {
+          "name": "Bow string",
+          "id": 1777,
+          "qty": 1
+        }
+      ],
+      "outputs": [
+        {
+          "name": "Maple longbow",
+          "id": 851,
+          "qty": 1
+        }
+      ]
+    }
+  ],
+  "Construction": [
+    {
+      "name": "Mahogany tables (attentive)",
+      "actionsPerHour": 900,
+      "experiencePerAction": 840.0,
+      "requirements": {
+        "Construction": 52
+      },
+      "inputs": [
+        {
+          "name": "Mahogany plank",
+          "id": 8782,
+          "qty": 6
+        }
+      ],
+      "outputs": []
+    },
+    {
+      "name": "Mahogany tables (lazy)",
+      "actionsPerHour": 500,
+      "experiencePerAction": 840.0,
+      "requirements": {
+        "Construction": 52
+      },
+      "inputs": [
+        {
+          "name": "Mahogany plank",
+          "id": 8782,
+          "qty": 6
+        }
+      ],
+      "outputs": []
+    },
+    {
+      "name": "Oak larders (attentive)",
+      "actionsPerHour": 800,
+      "experiencePerAction": 480.0,
+      "requirements": {
+        "Construction": 33
+      },
+      "inputs": [
+        {
+          "name": "Oak plank",
+          "id": 8778,
+          "qty": 8
+        }
+      ],
+      "outputs": []
+    },
+    {
+      "name": "Oak larders (lazy)",
+      "actionsPerHour": 500,
+      "experiencePerAction": 480.0,
+      "requirements": {
+        "Construction": 33
+      },
+      "inputs": [
+        {
+          "name": "Oak plank",
+          "id": 8778,
+          "qty": 8
+        }
+      ],
+      "outputs": []
+    }
+  ],
   "Crafting": [
     {
-      "name": "Green d'hide bodies",
-      "actionsPerHour": 1650,
-      "requirements": {
-        "Crafting": 63
-      },
-      "experiencePerAction": 186,
-      "inputs": [
-        {
-          "name": "Green dragon leather",
-          "id": 1745,
-          "qty": 3
-        }
-      ],
-      "outputs": [
-        {
-          "name": "Green d'hide body",
-          "id": 1135,
-          "qty": 1
-        }
-      ]
-    },
-    {
-      "name": "Blue d'hide bodies",
-      "actionsPerHour": 1650,
-      "requirements": {
-        "Crafting": 71
-      },
-      "experiencePerAction": 210,
-      "inputs": [
-        {
-          "item": "Blue dragon leather",
-          "id": 2505,
-          "qty": 3
-        }
-      ],
-      "outputs": [
-        {
-          "item": "Blue d'hide body",
-          "id": 2499,
-          "qty": 1
-        }
-      ]
-    },
-    {
-      "name": "Red d'hide bodies",
-      "actionsPerHour": 1650,
-      "requirements": {
-        "Crafting": 77
-      },
-      "experiencePerAction": 234,
-      "inputs": [
-        {
-          "item": "Red dragon leather",
-          "id": 2507,
-          "qty": 3
-        }
-      ],
-      "outputs": [
-        {
-          "item": "Red d'hide body",
-          "id": 2501,
-          "qty": 1
-        }
-      ]
-    },
-    {
-    "name": "Black d'hide bodies",
-    "actionsPerHour": 1650,
-    "requirements": {
-      "Crafting": 84
-    },
-    "experiencePerAction": 258,
-    "inputs": [
-      {
-        "item": "Black dragon leather",
-        "id": 2509,
-        "qty": 3
-      }
-    ],
-    "outputs": [
-      {
-        "item": "Black d'hide body",
-        "id": 2503,
-        "qty": 1
-      }
-    ]
-  },
-    {
-      "name": "Water battlestaves",
+      "name": "Air battlestaves",
       "actionsPerHour": 2450,
+      "experiencePerAction": 137.0,
       "requirements": {
-        "Crafting": 54
+        "Crafting": 66
       },
-      "experiencePerAction": 100,
       "inputs": [
         {
-          "name": "Water orb",
-          "id": 571,
+          "name": "Air orb",
+          "id": 573,
           "qty": 1
         },
         {
@@ -109,8 +165,162 @@
       ],
       "outputs": [
         {
-          "name": "Water battlestaff",
-          "id": 1395,
+          "name": "Air battlestaff",
+          "id": 1397,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "name": "Black d\u0027hide bodies",
+      "actionsPerHour": 1650,
+      "experiencePerAction": 258.0,
+      "requirements": {
+        "Crafting": 84
+      },
+      "inputs": [
+        {
+          "name": "Black dragon leather",
+          "id": 2509,
+          "qty": 3
+        }
+      ],
+      "outputs": [
+        {
+          "name": "Black d\u0027hide body",
+          "id": 2503,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "name": "Blue d\u0027hide bodies",
+      "actionsPerHour": 1650,
+      "experiencePerAction": 210.0,
+      "requirements": {
+        "Crafting": 71
+      },
+      "inputs": [
+        {
+          "name": "Blue dragon leather",
+          "id": 2505,
+          "qty": 3
+        }
+      ],
+      "outputs": [
+        {
+          "name": "Blue d\u0027hide body",
+          "id": 2499,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "name": "Cutting Diamonds",
+      "actionsPerHour": 2700,
+      "experiencePerAction": 107.0,
+      "requirements": {
+        "Crafting": 43
+      },
+      "inputs": [
+        {
+          "name": "Uncut diamond",
+          "id": 1617,
+          "qty": 1
+        }
+      ],
+      "outputs": [
+        {
+          "name": "Diamond",
+          "id": 1601,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "name": "Cutting Dragonstones",
+      "actionsPerHour": 2700,
+      "experiencePerAction": 137.0,
+      "requirements": {
+        "Crafting": 55
+      },
+      "inputs": [
+        {
+          "name": "Uncut dragonstone",
+          "id": 1631,
+          "qty": 1
+        }
+      ],
+      "outputs": [
+        {
+          "name": "Dragonstone",
+          "id": 1615,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "name": "Cutting Emeralds",
+      "actionsPerHour": 2700,
+      "experiencePerAction": 67.0,
+      "requirements": {
+        "Crafting": 27
+      },
+      "inputs": [
+        {
+          "name": "Uncut emerald",
+          "id": 1621,
+          "qty": 1
+        }
+      ],
+      "outputs": [
+        {
+          "name": "Emerald",
+          "id": 1605,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "name": "Cutting Rubies",
+      "actionsPerHour": 2700,
+      "experiencePerAction": 85.0,
+      "requirements": {
+        "Crafting": 34
+      },
+      "inputs": [
+        {
+          "name": "Uncut ruby",
+          "id": 1619,
+          "qty": 1
+        }
+      ],
+      "outputs": [
+        {
+          "name": "Ruby",
+          "id": 1603,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "name": "Cutting Sapphires",
+      "actionsPerHour": 2700,
+      "experiencePerAction": 50.0,
+      "requirements": {
+        "Crafting": 20
+      },
+      "inputs": [
+        {
+          "name": "Uncut sapphire",
+          "id": 1623,
+          "qty": 1
+        }
+      ],
+      "outputs": [
+        {
+          "name": "Sapphire",
+          "id": 1607,
           "qty": 1
         }
       ]
@@ -118,10 +328,10 @@
     {
       "name": "Earth battlestaves",
       "actionsPerHour": 2450,
+      "experiencePerAction": 112.0,
       "requirements": {
         "Crafting": 58
       },
-      "experiencePerAction": 112.5,
       "inputs": [
         {
           "name": "Earth orb",
@@ -145,10 +355,10 @@
     {
       "name": "Fire battlestaves",
       "actionsPerHour": 2450,
+      "experiencePerAction": 125.0,
       "requirements": {
         "Crafting": 62
       },
-      "experiencePerAction": 125,
       "inputs": [
         {
           "name": "Fire orb",
@@ -170,16 +380,104 @@
       ]
     },
     {
-      "name": "Air battlestaves",
-      "actionsPerHour": 2450,
+      "name": "Gold amulet (unstrung)",
+      "actionsPerHour": 1500,
+      "experiencePerAction": 30.0,
       "requirements": {
-        "Crafting": 66
+        "Crafting": 8
       },
-      "experiencePerAction": 137.5,
       "inputs": [
         {
-          "name": "Air orb",
-          "id": 573,
+          "name": "Gold bar",
+          "id": 2357,
+          "qty": 1
+        }
+      ],
+      "outputs": [
+        {
+          "name": "Gold amulet (u)",
+          "id": 1673,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "name": "Green d\u0027hide bodies",
+      "actionsPerHour": 1650,
+      "experiencePerAction": 186.0,
+      "requirements": {
+        "Crafting": 63
+      },
+      "inputs": [
+        {
+          "name": "Green dragon leather",
+          "id": 1745,
+          "qty": 3
+        }
+      ],
+      "outputs": [
+        {
+          "name": "Green d\u0027hide body",
+          "id": 1135,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "name": "Red d\u0027hide bodies",
+      "actionsPerHour": 1650,
+      "experiencePerAction": 234.0,
+      "requirements": {
+        "Crafting": 77
+      },
+      "inputs": [
+        {
+          "name": "Red dragon leather",
+          "id": 2507,
+          "qty": 3
+        }
+      ],
+      "outputs": [
+        {
+          "name": "Red d\u0027hide body",
+          "id": 2501,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "name": "Unpowered orb",
+      "actionsPerHour": 1650,
+      "experiencePerAction": 52.0,
+      "requirements": {
+        "Crafting": 46
+      },
+      "inputs": [
+        {
+          "name": "Molten glass",
+          "id": 1775,
+          "qty": 1
+        }
+      ],
+      "outputs": [
+        {
+          "name": "Unpowered orb",
+          "id": 567,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "name": "Water battlestaves",
+      "actionsPerHour": 2450,
+      "experiencePerAction": 100.0,
+      "requirements": {
+        "Crafting": 54
+      },
+      "inputs": [
+        {
+          "name": "Water orb",
+          "id": 571,
           "qty": 1
         },
         {
@@ -190,905 +488,119 @@
       ],
       "outputs": [
         {
-          "name": "Air battlestaff",
-          "id": 1397,
+          "name": "Water battlestaff",
+          "id": 1395,
           "qty": 1
-        }
-      ]
-    },
-    {
-      "name": "Unpowered orb",
-      "actionsPerHour": 1650,
-      "requirements": {
-        "Crafting": 46
-      },
-      "experiencePerAction": 52.5,
-      "inputs": [
-        {
-          "item": "Molten glass",
-          "id": 1775,
-          "qty": 1
-        }
-      ],
-      "outputs": [
-        {
-          "item": "Unpowered orb",
-          "id": 567,
-          "qty": 1
-        }
-      ]
-    },
-    {
-      "name": "Gold amulet (unstrung)",
-      "actionsPerHour": 1500,
-      "requirements": {
-        "Crafting": 8
-      },
-      "experiencePerAction": 30,
-      "inputs": [
-        {
-          "item": "Gold bar",
-          "id": 2357,
-          "qty": 1
-        }
-      ],
-      "outputs": [
-        {
-          "item": "Gold amulet (u)",
-          "id": 1673,
-          "qty": 1
-        }
-      ]
-    },
-    {
-      "name": "Cutting Sapphires",
-      "actionsPerHour": 2700,
-      "requirements": {
-        "Crafting": 20
-      },
-      "experiencePerAction": 50,
-      "inputs": [
-        {
-          "item": "Uncut sapphire",
-          "id": 1623,
-          "qty": 1
-        }
-      ],
-      "outputs": [
-        {
-          "item": "Sapphire",
-          "id": 1607,
-          "qty": 1
-        }
-      ]
-    },
-    {
-      "name": "Cutting Emeralds",
-      "actionsPerHour": 2700,
-      "requirements": {
-        "Crafting": 27
-      },
-      "experiencePerAction": 67.5,
-      "inputs": [
-        {
-          "item": "Uncut emerald",
-          "id": 1621,
-          "qty": 1
-        }
-      ],
-      "outputs": [
-        {
-          "item": "Emerald",
-          "id": 1605,
-          "qty": 1
-        }
-      ]
-    },
-    {
-      "name": "Cutting Rubies",
-      "actionsPerHour": 2700,
-      "requirements": {
-        "Crafting": 34
-      },
-      "experiencePerAction": 85,
-      "inputs": [
-        {
-          "item": "Uncut ruby",
-          "id": 1619,
-          "qty": 1
-        }
-      ],
-      "outputs": [
-        {
-          "item": "Ruby",
-          "id": 1603,
-          "qty": 1
-        }
-      ]
-    },
-    {
-      "name": "Cutting Diamonds",
-      "actionsPerHour": 2700,
-      "requirements": {
-        "Crafting": 43
-      },
-      "experiencePerAction": 107.5,
-      "inputs": [
-        {
-          "item": "Uncut diamond",
-          "id": 1617,
-          "qty": 1
-        }
-      ],
-      "outputs": [
-        {
-          "item": "Diamond",
-          "id": 1601,
-          "qty": 1
-        }
-      ]
-    },
-    {
-      "name": "Cutting Dragonstones",
-      "actionsPerHour": 2700,
-      "requirements": {
-        "Crafting": 55
-      },
-      "experiencePerAction": 137.5,
-      "inputs": [
-        {
-          "item": "Uncut dragonstone",
-          "id": 1631,
-          "qty": 1
-        }
-      ],
-      "outputs": [
-        {
-          "item": "Dragonstone",
-          "id": 1615,
-          "qty": 1
-        }
-      ]
-    }
-  ],
-  "Construction": [
-    {
-      "name": "Oak larders (lazy)",
-      "actionsPerHour": 500,
-      "experiencePerAction": 480,
-      "requirements": {
-        "Construction": 33
-      },
-      "inputs": [
-        {
-          "name": "Oak plank",
-          "id": 8778,
-          "qty": 8
-        }
-      ]
-    },
-    {
-      "name": "Oak larders (attentive)",
-      "actionsPerHour": 800,
-      "experiencePerAction": 480,
-      "requirements": {
-        "Construction": 33
-      },
-      "inputs": [
-        {
-          "name": "Oak plank",
-          "id": 8778,
-          "qty": 8
-        }
-      ]
-    },
-    {
-      "name": "Mahogany tables (lazy)",
-      "actionsPerHour": 500,
-      "experiencePerAction": 840,
-      "requirements": {
-        "Construction": 52
-      },
-      "inputs": [
-        {
-          "name": "Mahogany plank",
-          "id": 8782,
-          "qty": 6
-        }
-      ]
-    },
-    {
-      "name": "Mahogany tables (attentive)",
-      "actionsPerHour": 900,
-      "experiencePerAction": 840,
-      "requirements": {
-        "Construction": 52
-      },
-      "inputs": [
-        {
-          "name": "Mahogany plank",
-          "id": 8782,
-          "qty": 6
         }
       ]
     }
   ],
   "Prayer": [
     {
-      "name": "Bones (Gilded altar)",
-      "actionsPerHour": 1300,
-      "experiencePerAction": 15.75,
-      "inputs": [
-        {
-          "name": "Bones",
-          "id": 526,
-          "qty": 1
-        }
-      ]
-    },
-    {
-      "name": "Big bones (Gilded altar)",
-      "actionsPerHour": 1300,
-      "experiencePerAction": 52.2,
-      "inputs": [
-        {
-          "name": "Big bones",
-          "id": 532,
-          "qty": 1
-        }
-      ]
-    },
-    {
       "name": "Babydragon bones (Gilded altar)",
       "actionsPerHour": 1300,
-      "experiencePerAction": 105,
+      "experiencePerAction": 105.0,
+      "requirements": {},
       "inputs": [
         {
           "name": "Babydragon bones",
           "id": 534,
           "qty": 1
         }
-      ]
+      ],
+      "outputs": []
     },
     {
-      "name": "Wyvern bones (Gilded altar)",
+      "name": "Big bones (Gilded altar)",
       "actionsPerHour": 1300,
-      "experiencePerAction": 252,
+      "experiencePerAction": 52.0,
+      "requirements": {},
       "inputs": [
         {
-          "name": "Wyvern bones",
-          "id": 6812,
+          "name": "Big bones",
+          "id": 532,
           "qty": 1
         }
-      ]
+      ],
+      "outputs": []
     },
     {
-      "name": "Dragon bones (Gilded altar)",
+      "name": "Bones (Gilded altar)",
       "actionsPerHour": 1300,
-      "experiencePerAction": 252,
+      "experiencePerAction": 15.0,
+      "requirements": {},
       "inputs": [
         {
-          "name": "Dragon bones",
-          "id": 536,
+          "name": "Bones",
+          "id": 526,
           "qty": 1
         }
-      ]
-    },
-    {
-      "name": "Lava dragon bones (Gilded altar)",
-      "actionsPerHour": 1300,
-      "experiencePerAction": 297.5,
-      "inputs": [
-        {
-          "name": "Lava dragon bones",
-          "id": 11943,
-          "qty": 1
-        }
-      ]
+      ],
+      "outputs": []
     },
     {
       "name": "Dagannoth bones (Gilded altar)",
       "actionsPerHour": 1300,
-      "experiencePerAction": 437.5,
+      "experiencePerAction": 437.0,
+      "requirements": {},
       "inputs": [
         {
           "name": "Dagannoth bones",
           "id": 6729,
           "qty": 1
         }
-      ]
+      ],
+      "outputs": []
+    },
+    {
+      "name": "Dragon bones (Gilded altar)",
+      "actionsPerHour": 1300,
+      "experiencePerAction": 252.0,
+      "requirements": {},
+      "inputs": [
+        {
+          "name": "Dragon bones",
+          "id": 536,
+          "qty": 1
+        }
+      ],
+      "outputs": []
+    },
+    {
+      "name": "Lava dragon bones (Gilded altar)",
+      "actionsPerHour": 1300,
+      "experiencePerAction": 297.0,
+      "requirements": {},
+      "inputs": [
+        {
+          "name": "Lava dragon bones",
+          "id": 11943,
+          "qty": 1
+        }
+      ],
+      "outputs": []
     },
     {
       "name": "Ourg bones (Gilded altar)",
       "actionsPerHour": 1300,
-      "experiencePerAction": 490,
+      "experiencePerAction": 490.0,
+      "requirements": {},
       "inputs": [
         {
           "name": "Ourg bones",
           "id": 4834,
           "qty": 1
         }
-      ]
-    },
-    {
-      "name": "Reanimate Goblin",
-      "actionsPerHour": 200,
-      "experiencePerAction": 130,
-      "inputs": [
-        {
-          "name": "Ensouled goblin head",
-          "id": 13448,
-          "qty": 1
-        },
-        {
-          "name": "Body rune",
-          "id": 559,
-          "qty": 2
-        },
-        {
-          "name": "Nature rune",
-          "id": 561,
-          "qty": 1
-        }
-      ]
-    },
-    {
-      "name": "Reanimate Monkey",
-      "actionsPerHour": 200,
-      "requirements": {
-        "Magic": 7
-      },
-      "experiencePerAction": 182,
-      "inputs": [
-        {
-          "name": "Ensouled monkey head",
-          "id": 13451,
-          "qty": 1
-        },
-        {
-          "name": "Body rune",
-          "id": 559,
-          "qty": 3
-        },
-        {
-          "name": "Nature rune",
-          "id": 561,
-          "qty": 1
-        }
-      ]
-    },
-    {
-      "name": "Reanimate Imp",
-      "actionsPerHour": 200,
-      "requirements": {
-        "Magic": 12
-      },
-      "experiencePerAction": 286,
-      "inputs": [
-        {
-          "name": "Ensouled imp head",
-          "id": 13454,
-          "qty": 1
-        },
-        {
-          "name": "Body rune",
-          "id": 559,
-          "qty": 3
-        },
-        {
-          "name": "Nature rune",
-          "id": 561,
-          "qty": 2
-        }
-      ]
-    },
-    {
-      "name": "Reanimate Minotaur",
-      "actionsPerHour": 200,
-      "requirements": {
-        "Magic": 16
-      },
-      "experiencePerAction": 364,
-      "inputs": [
-        {
-          "name": "Ensouled minotaur head",
-          "id": 13457,
-          "qty": 1
-        },
-        {
-          "name": "Body rune",
-          "id": 559,
-          "qty": 4
-        },
-        {
-          "name": "Nature rune",
-          "id": 561,
-          "qty": 2
-        }
-      ]
-    },
-    {
-      "name": "Reanimate Scorpion",
-      "actionsPerHour": 200,
-      "requirements": {
-        "Magic": 19
-      },
-      "experiencePerAction": 454,
-      "inputs": [
-        {
-          "name": "Ensouled scorpion head",
-          "id": 13460,
-          "qty": 1
-        },
-        {
-          "name": "Nature rune",
-          "id": 561,
-          "qty": 1
-        },
-        {
-          "name": "Soul rune",
-          "id": 566,
-          "qty": 1
-        }
-      ]
-    },
-    {
-      "name": "Reanimate Bear",
-      "actionsPerHour": 200,
-      "requirements": {
-        "Magic": 21
-      },
-      "experiencePerAction": 480,
-      "inputs": [
-        {
-          "name": "Ensouled bear head",
-          "id": 13463,
-          "qty": 1
-        },
-        {
-          "name": "Body rune",
-          "id": 559,
-          "qty": 1
-        },
-        {
-          "name": "Nature rune",
-          "id": 561,
-          "qty": 1
-        },
-        {
-          "name": "Soul rune",
-          "id": 566,
-          "qty": 1
-        }
-      ]
-    },
-    {
-      "name": "Reanimate Unicorn",
-      "actionsPerHour": 200,
-      "requirements": {
-        "Magic": 22
-      },
-      "experiencePerAction": 494,
-      "inputs": [
-        {
-          "name": "Ensouled unicorn head",
-          "id": 13466,
-          "qty": 1
-        },
-        {
-          "name": "Body rune",
-          "id": 559,
-          "qty": 2
-        },
-        {
-          "name": "Nature rune",
-          "id": 561,
-          "qty": 1
-        },
-        {
-          "name": "Soul rune",
-          "id": 566,
-          "qty": 1
-        }
-      ]
-    },
-    {
-      "name": "Reanimate Dog",
-      "actionsPerHour": 200,
-      "requirements": {
-        "Magic": 26
-      },
-      "experiencePerAction": 520,
-      "inputs": [
-        {
-          "name": "Ensouled dog head",
-          "id": 13469,
-          "qty": 1
-        },
-        {
-          "name": "Body rune",
-          "id": 559,
-          "qty": 2
-        },
-        {
-          "name": "Nature rune",
-          "id": 561,
-          "qty": 2
-        },
-        {
-          "name": "Soul rune",
-          "id": 566,
-          "qty": 1
-        }
-      ]
-    },
-    {
-      "name": "Reanimate Chaos Druid",
-      "actionsPerHour": 200,
-      "requirements": {
-        "Magic": 30
-      },
-      "experiencePerAction": 584,
-      "inputs": [
-        {
-          "name": "Ensouled chaos druid head",
-          "id": 13472,
-          "qty": 1
-        },
-        {
-          "name": "Body rune",
-          "id": 559,
-          "qty": 3
-        },
-        {
-          "name": "Nature rune",
-          "id": 561,
-          "qty": 2
-        },
-        {
-          "name": "Soul rune",
-          "id": 566,
-          "qty": 1
-        }
-      ]
-    },
-    {
-      "name": "Reanimate Giant",
-      "actionsPerHour": 200,
-      "requirements": {
-        "Magic": 37
-      },
-      "experiencePerAction": 650,
-      "inputs": [
-        {
-          "name": "Ensouled giant head",
-          "id": 13475,
-          "qty": 1
-        },
-        {
-          "name": "Body rune",
-          "id": 559,
-          "qty": 4
-        },
-        {
-          "name": "Nature rune",
-          "id": 561,
-          "qty": 2
-        },
-        {
-          "name": "Soul rune",
-          "id": 566,
-          "qty": 1
-        }
-      ]
-    },
-    {
-      "name": "Reanimate Ogre",
-      "actionsPerHour": 200,
-      "requirements": {
-        "Magic": 40
-      },
-      "experiencePerAction": 716,
-      "inputs": [
-        {
-          "name": "Ensouled ogre head",
-          "id": 13478,
-          "qty": 1
-        },
-        {
-          "name": "Body rune",
-          "id": 559,
-          "qty": 4
-        },
-        {
-          "name": "Nature rune",
-          "id": 561,
-          "qty": 3
-        },
-        {
-          "name": "Soul rune",
-          "id": 566,
-          "qty": 1
-        }
-      ]
-    },
-    {
-      "name": "Reanimate Elf",
-      "actionsPerHour": 200,
-      "requirements": {
-        "Magic": 43
-      },
-      "experiencePerAction": 754,
-      "inputs": [
-        {
-          "name": "Ensouled elf head",
-          "id": 13481,
-          "qty": 1
-        },
-        {
-          "name": "Body rune",
-          "id": 559,
-          "qty": 2
-        },
-        {
-          "name": "Nature rune",
-          "id": 561,
-          "qty": 2
-        },
-        {
-          "name": "Soul rune",
-          "id": 566,
-          "qty": 2
-        }
-      ]
-    },
-    {
-      "name": "Reanimate Troll",
-      "actionsPerHour": 200,
-      "requirements": {
-        "Magic": 46
-      },
-      "experiencePerAction": 780,
-      "inputs": [
-        {
-          "name": "Ensouled troll head",
-          "id": 13484,
-          "qty": 1
-        },
-        {
-          "name": "Body rune",
-          "id": 559,
-          "qty": 3
-        },
-        {
-          "name": "Nature rune",
-          "id": 561,
-          "qty": 2
-        },
-        {
-          "name": "Soul rune",
-          "id": 566,
-          "qty": 2
-        }
-      ]
-    },
-    {
-      "name": "Reanimate Horror",
-      "actionsPerHour": 200,
-      "requirements": {
-        "Magic": 52
-      },
-      "experiencePerAction": 832,
-      "inputs": [
-        {
-          "name": "Ensouled horror head",
-          "id": 13487,
-          "qty": 1
-        },
-        {
-          "name": "Body rune",
-          "id": 559,
-          "qty": 4
-        },
-        {
-          "name": "Nature rune",
-          "id": 561,
-          "qty": 2
-        },
-        {
-          "name": "Soul rune",
-          "id": 566,
-          "qty": 2
-        }
-      ]
-    },
-    {
-      "name": "Reanimate Kalphite",
-      "actionsPerHour": 200,
-      "requirements": {
-        "Magic": 57
-      },
-      "experiencePerAction": 884,
-      "inputs": [
-        {
-          "name": "Ensouled kalphite head",
-          "id": 13490,
-          "qty": 1
-        },
-        {
-          "name": "Body rune",
-          "id": 559,
-          "qty": 4
-        },
-        {
-          "name": "Nature rune",
-          "id": 561,
-          "qty": 3
-        },
-        {
-          "name": "Soul rune",
-          "id": 566,
-          "qty": 2
-        }
-      ]
-    },
-    {
-      "name": "Reanimate Dagannoth",
-      "actionsPerHour": 200,
-      "requirements": {
-        "Magic": 62
-      },
-      "experiencePerAction": 936,
-      "inputs": [
-        {
-          "name": "Ensouled dagannoth head",
-          "id": 13493,
-          "qty": 1
-        },
-        {
-          "name": "Body rune",
-          "id": 559,
-          "qty": 4
-        },
-        {
-          "name": "Nature rune",
-          "id": 561,
-          "qty": 3
-        },
-        {
-          "name": "Soul rune",
-          "id": 566,
-          "qty": 3
-        }
-      ]
-    },
-    {
-      "name": "Reanimate Bloodveld",
-      "actionsPerHour": 200,
-      "requirements": {
-        "Magic": 65
-      },
-      "experiencePerAction": 1040,
-      "inputs": [
-        {
-          "name": "Ensouled bloodveld head",
-          "id": 13496,
-          "qty": 1
-        },
-        {
-          "name": "Nature rune",
-          "id": 561,
-          "qty": 2
-        },
-        {
-          "name": "Soul rune",
-          "id": 566,
-          "qty": 2
-        },
-        {
-          "name": "Blood rune",
-          "id": 565,
-          "qty": 1
-        }
-      ]
-    },
-    {
-      "name": "Reanimate TzHaar",
-      "actionsPerHour": 200,
-      "requirements": {
-        "Magic": 69
-      },
-      "experiencePerAction": 1104,
-      "inputs": [
-        {
-          "name": "Ensouled tzhaar head",
-          "id": 13499,
-          "qty": 1
-        },
-        {
-          "name": "Nature rune",
-          "id": 561,
-          "qty": 3
-        },
-        {
-          "name": "Soul rune",
-          "id": 566,
-          "qty": 2
-        },
-        {
-          "name": "Blood rune",
-          "id": 565,
-          "qty": 1
-        }
-      ]
-    },
-    {
-      "name": "Reanimate Demon",
-      "actionsPerHour": 200,
-      "requirements": {
-        "Magic": 72
-      },
-      "experiencePerAction": 1170,
-      "inputs": [
-        {
-          "name": "Ensouled demon head",
-          "id": 13502,
-          "qty": 1
-        },
-        {
-          "name": "Nature rune",
-          "id": 561,
-          "qty": 4
-        },
-        {
-          "name": "Soul rune",
-          "id": 566,
-          "qty": 2
-        },
-        {
-          "name": "Blood rune",
-          "id": 565,
-          "qty": 1
-        }
-      ]
-    },
-    {
-      "name": "Reanimate Aviansie",
-      "actionsPerHour": 200,
-      "requirements": {
-        "Magic": 78
-      },
-      "experiencePerAction": 1234,
-      "inputs": [
-        {
-          "name": "Ensouled aviansie head",
-          "id": 13505,
-          "qty": 1
-        },
-        {
-          "name": "Nature rune",
-          "id": 561,
-          "qty": 4
-        },
-        {
-          "name": "Soul rune",
-          "id": 566,
-          "qty": 3
-        },
-        {
-          "name": "Blood rune",
-          "id": 565,
-          "qty": 1
-        }
-      ]
+      ],
+      "outputs": []
     },
     {
       "name": "Reanimate Abyssal Creature",
       "actionsPerHour": 200,
+      "experiencePerAction": 1300.0,
       "requirements": {
         "Magic": 85
       },
-      "experiencePerAction": 1300,
       "inputs": [
         {
           "name": "Ensouled abyssal head",
@@ -1110,15 +622,233 @@
           "id": 565,
           "qty": 1
         }
-      ]
+      ],
+      "outputs": []
+    },
+    {
+      "name": "Reanimate Aviansie",
+      "actionsPerHour": 200,
+      "experiencePerAction": 1234.0,
+      "requirements": {
+        "Magic": 78
+      },
+      "inputs": [
+        {
+          "name": "Ensouled aviansie head",
+          "id": 13505,
+          "qty": 1
+        },
+        {
+          "name": "Nature rune",
+          "id": 561,
+          "qty": 4
+        },
+        {
+          "name": "Soul rune",
+          "id": 566,
+          "qty": 3
+        },
+        {
+          "name": "Blood rune",
+          "id": 565,
+          "qty": 1
+        }
+      ],
+      "outputs": []
+    },
+    {
+      "name": "Reanimate Bear",
+      "actionsPerHour": 200,
+      "experiencePerAction": 480.0,
+      "requirements": {
+        "Magic": 21
+      },
+      "inputs": [
+        {
+          "name": "Ensouled bear head",
+          "id": 13463,
+          "qty": 1
+        },
+        {
+          "name": "Body rune",
+          "id": 559,
+          "qty": 1
+        },
+        {
+          "name": "Nature rune",
+          "id": 561,
+          "qty": 1
+        },
+        {
+          "name": "Soul rune",
+          "id": 566,
+          "qty": 1
+        }
+      ],
+      "outputs": []
+    },
+    {
+      "name": "Reanimate Bloodveld",
+      "actionsPerHour": 200,
+      "experiencePerAction": 1040.0,
+      "requirements": {
+        "Magic": 65
+      },
+      "inputs": [
+        {
+          "name": "Ensouled bloodveld head",
+          "id": 13496,
+          "qty": 1
+        },
+        {
+          "name": "Nature rune",
+          "id": 561,
+          "qty": 2
+        },
+        {
+          "name": "Soul rune",
+          "id": 566,
+          "qty": 2
+        },
+        {
+          "name": "Blood rune",
+          "id": 565,
+          "qty": 1
+        }
+      ],
+      "outputs": []
+    },
+    {
+      "name": "Reanimate Chaos Druid",
+      "actionsPerHour": 200,
+      "experiencePerAction": 584.0,
+      "requirements": {
+        "Magic": 30
+      },
+      "inputs": [
+        {
+          "name": "Ensouled chaos druid head",
+          "id": 13472,
+          "qty": 1
+        },
+        {
+          "name": "Body rune",
+          "id": 559,
+          "qty": 3
+        },
+        {
+          "name": "Nature rune",
+          "id": 561,
+          "qty": 2
+        },
+        {
+          "name": "Soul rune",
+          "id": 566,
+          "qty": 1
+        }
+      ],
+      "outputs": []
+    },
+    {
+      "name": "Reanimate Dagannoth",
+      "actionsPerHour": 200,
+      "experiencePerAction": 936.0,
+      "requirements": {
+        "Magic": 62
+      },
+      "inputs": [
+        {
+          "name": "Ensouled dagannoth head",
+          "id": 13493,
+          "qty": 1
+        },
+        {
+          "name": "Body rune",
+          "id": 559,
+          "qty": 4
+        },
+        {
+          "name": "Nature rune",
+          "id": 561,
+          "qty": 3
+        },
+        {
+          "name": "Soul rune",
+          "id": 566,
+          "qty": 3
+        }
+      ],
+      "outputs": []
+    },
+    {
+      "name": "Reanimate Demon",
+      "actionsPerHour": 200,
+      "experiencePerAction": 1170.0,
+      "requirements": {
+        "Magic": 72
+      },
+      "inputs": [
+        {
+          "name": "Ensouled demon head",
+          "id": 13502,
+          "qty": 1
+        },
+        {
+          "name": "Nature rune",
+          "id": 561,
+          "qty": 4
+        },
+        {
+          "name": "Soul rune",
+          "id": 566,
+          "qty": 2
+        },
+        {
+          "name": "Blood rune",
+          "id": 565,
+          "qty": 1
+        }
+      ],
+      "outputs": []
+    },
+    {
+      "name": "Reanimate Dog",
+      "actionsPerHour": 200,
+      "experiencePerAction": 520.0,
+      "requirements": {
+        "Magic": 26
+      },
+      "inputs": [
+        {
+          "name": "Ensouled dog head",
+          "id": 13469,
+          "qty": 1
+        },
+        {
+          "name": "Body rune",
+          "id": 559,
+          "qty": 2
+        },
+        {
+          "name": "Nature rune",
+          "id": 561,
+          "qty": 2
+        },
+        {
+          "name": "Soul rune",
+          "id": 566,
+          "qty": 1
+        }
+      ],
+      "outputs": []
     },
     {
       "name": "Reanimate Dragon",
       "actionsPerHour": 200,
+      "experiencePerAction": 1560.0,
       "requirements": {
         "Magic": 93
       },
-      "experiencePerAction": 1560,
       "inputs": [
         {
           "name": "Ensouled dragon head",
@@ -1139,6 +869,573 @@
           "name": "Blood rune",
           "id": 565,
           "qty": 2
+        }
+      ],
+      "outputs": []
+    },
+    {
+      "name": "Reanimate Elf",
+      "actionsPerHour": 200,
+      "experiencePerAction": 754.0,
+      "requirements": {
+        "Magic": 43
+      },
+      "inputs": [
+        {
+          "name": "Ensouled elf head",
+          "id": 13481,
+          "qty": 1
+        },
+        {
+          "name": "Body rune",
+          "id": 559,
+          "qty": 2
+        },
+        {
+          "name": "Nature rune",
+          "id": 561,
+          "qty": 2
+        },
+        {
+          "name": "Soul rune",
+          "id": 566,
+          "qty": 2
+        }
+      ],
+      "outputs": []
+    },
+    {
+      "name": "Reanimate Giant",
+      "actionsPerHour": 200,
+      "experiencePerAction": 650.0,
+      "requirements": {
+        "Magic": 37
+      },
+      "inputs": [
+        {
+          "name": "Ensouled giant head",
+          "id": 13475,
+          "qty": 1
+        },
+        {
+          "name": "Body rune",
+          "id": 559,
+          "qty": 4
+        },
+        {
+          "name": "Nature rune",
+          "id": 561,
+          "qty": 2
+        },
+        {
+          "name": "Soul rune",
+          "id": 566,
+          "qty": 1
+        }
+      ],
+      "outputs": []
+    },
+    {
+      "name": "Reanimate Goblin",
+      "actionsPerHour": 200,
+      "experiencePerAction": 130.0,
+      "requirements": {},
+      "inputs": [
+        {
+          "name": "Ensouled goblin head",
+          "id": 13448,
+          "qty": 1
+        },
+        {
+          "name": "Body rune",
+          "id": 559,
+          "qty": 2
+        },
+        {
+          "name": "Nature rune",
+          "id": 561,
+          "qty": 1
+        }
+      ],
+      "outputs": []
+    },
+    {
+      "name": "Reanimate Horror",
+      "actionsPerHour": 200,
+      "experiencePerAction": 832.0,
+      "requirements": {
+        "Magic": 52
+      },
+      "inputs": [
+        {
+          "name": "Ensouled horror head",
+          "id": 13487,
+          "qty": 1
+        },
+        {
+          "name": "Body rune",
+          "id": 559,
+          "qty": 4
+        },
+        {
+          "name": "Nature rune",
+          "id": 561,
+          "qty": 2
+        },
+        {
+          "name": "Soul rune",
+          "id": 566,
+          "qty": 2
+        }
+      ],
+      "outputs": []
+    },
+    {
+      "name": "Reanimate Imp",
+      "actionsPerHour": 200,
+      "experiencePerAction": 286.0,
+      "requirements": {
+        "Magic": 12
+      },
+      "inputs": [
+        {
+          "name": "Ensouled imp head",
+          "id": 13454,
+          "qty": 1
+        },
+        {
+          "name": "Body rune",
+          "id": 559,
+          "qty": 3
+        },
+        {
+          "name": "Nature rune",
+          "id": 561,
+          "qty": 2
+        }
+      ],
+      "outputs": []
+    },
+    {
+      "name": "Reanimate Kalphite",
+      "actionsPerHour": 200,
+      "experiencePerAction": 884.0,
+      "requirements": {
+        "Magic": 57
+      },
+      "inputs": [
+        {
+          "name": "Ensouled kalphite head",
+          "id": 13490,
+          "qty": 1
+        },
+        {
+          "name": "Body rune",
+          "id": 559,
+          "qty": 4
+        },
+        {
+          "name": "Nature rune",
+          "id": 561,
+          "qty": 3
+        },
+        {
+          "name": "Soul rune",
+          "id": 566,
+          "qty": 2
+        }
+      ],
+      "outputs": []
+    },
+    {
+      "name": "Reanimate Minotaur",
+      "actionsPerHour": 200,
+      "experiencePerAction": 364.0,
+      "requirements": {
+        "Magic": 16
+      },
+      "inputs": [
+        {
+          "name": "Ensouled minotaur head",
+          "id": 13457,
+          "qty": 1
+        },
+        {
+          "name": "Body rune",
+          "id": 559,
+          "qty": 4
+        },
+        {
+          "name": "Nature rune",
+          "id": 561,
+          "qty": 2
+        }
+      ],
+      "outputs": []
+    },
+    {
+      "name": "Reanimate Monkey",
+      "actionsPerHour": 200,
+      "experiencePerAction": 182.0,
+      "requirements": {
+        "Magic": 7
+      },
+      "inputs": [
+        {
+          "name": "Ensouled monkey head",
+          "id": 13451,
+          "qty": 1
+        },
+        {
+          "name": "Body rune",
+          "id": 559,
+          "qty": 3
+        },
+        {
+          "name": "Nature rune",
+          "id": 561,
+          "qty": 1
+        }
+      ],
+      "outputs": []
+    },
+    {
+      "name": "Reanimate Ogre",
+      "actionsPerHour": 200,
+      "experiencePerAction": 716.0,
+      "requirements": {
+        "Magic": 40
+      },
+      "inputs": [
+        {
+          "name": "Ensouled ogre head",
+          "id": 13478,
+          "qty": 1
+        },
+        {
+          "name": "Body rune",
+          "id": 559,
+          "qty": 4
+        },
+        {
+          "name": "Nature rune",
+          "id": 561,
+          "qty": 3
+        },
+        {
+          "name": "Soul rune",
+          "id": 566,
+          "qty": 1
+        }
+      ],
+      "outputs": []
+    },
+    {
+      "name": "Reanimate Scorpion",
+      "actionsPerHour": 200,
+      "experiencePerAction": 454.0,
+      "requirements": {
+        "Magic": 19
+      },
+      "inputs": [
+        {
+          "name": "Ensouled scorpion head",
+          "id": 13460,
+          "qty": 1
+        },
+        {
+          "name": "Nature rune",
+          "id": 561,
+          "qty": 1
+        },
+        {
+          "name": "Soul rune",
+          "id": 566,
+          "qty": 1
+        }
+      ],
+      "outputs": []
+    },
+    {
+      "name": "Reanimate Troll",
+      "actionsPerHour": 200,
+      "experiencePerAction": 780.0,
+      "requirements": {
+        "Magic": 46
+      },
+      "inputs": [
+        {
+          "name": "Ensouled troll head",
+          "id": 13484,
+          "qty": 1
+        },
+        {
+          "name": "Body rune",
+          "id": 559,
+          "qty": 3
+        },
+        {
+          "name": "Nature rune",
+          "id": 561,
+          "qty": 2
+        },
+        {
+          "name": "Soul rune",
+          "id": 566,
+          "qty": 2
+        }
+      ],
+      "outputs": []
+    },
+    {
+      "name": "Reanimate TzHaar",
+      "actionsPerHour": 200,
+      "experiencePerAction": 1104.0,
+      "requirements": {
+        "Magic": 69
+      },
+      "inputs": [
+        {
+          "name": "Ensouled tzhaar head",
+          "id": 13499,
+          "qty": 1
+        },
+        {
+          "name": "Nature rune",
+          "id": 561,
+          "qty": 3
+        },
+        {
+          "name": "Soul rune",
+          "id": 566,
+          "qty": 2
+        },
+        {
+          "name": "Blood rune",
+          "id": 565,
+          "qty": 1
+        }
+      ],
+      "outputs": []
+    },
+    {
+      "name": "Reanimate Unicorn",
+      "actionsPerHour": 200,
+      "experiencePerAction": 494.0,
+      "requirements": {
+        "Magic": 22
+      },
+      "inputs": [
+        {
+          "name": "Ensouled unicorn head",
+          "id": 13466,
+          "qty": 1
+        },
+        {
+          "name": "Body rune",
+          "id": 559,
+          "qty": 2
+        },
+        {
+          "name": "Nature rune",
+          "id": 561,
+          "qty": 1
+        },
+        {
+          "name": "Soul rune",
+          "id": 566,
+          "qty": 1
+        }
+      ],
+      "outputs": []
+    },
+    {
+      "name": "Wyvern bones (Gilded altar)",
+      "actionsPerHour": 1300,
+      "experiencePerAction": 252.0,
+      "requirements": {},
+      "inputs": [
+        {
+          "name": "Wyvern bones",
+          "id": 6812,
+          "qty": 1
+        }
+      ],
+      "outputs": []
+    }
+  ],
+  "Smithing": [
+    {
+      "name": "Adamant bars (Blast Furnace)",
+      "actionsPerHour": 1900,
+      "experiencePerAction": 37.5,
+      "requirements": {
+        "Smithing": 70
+      },
+      "inputs": [
+        {
+          "name": "Adamant ore",
+          "id": -1,
+          "qty": 1
+        },
+        {
+          "name": "Coal",
+          "id": 453,
+          "qty": 3
+        }
+      ],
+      "outputs": [
+        {
+          "name": "Adamant bar",
+          "id": -1,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "name": "Cannonballs",
+      "actionsPerHour": 600,
+      "experiencePerAction": 25.6,
+      "requirements": {
+        "Smithing": 35
+      },
+      "inputs": [
+        {
+          "name": "Steel bar",
+          "id": 2353,
+          "qty": 1
+        }
+      ],
+      "outputs": [
+        {
+          "name": "Cannonball",
+          "id": 2,
+          "qty": 4
+        }
+      ]
+    },
+    {
+      "name": "Gold bars (Blast Furnace)",
+      "actionsPerHour": 4000,
+      "experiencePerAction": 56.2,
+      "requirements": {
+        "Smithing": 60
+      },
+      "inputs": [
+        {
+          "name": "Gold ore",
+          "id": 444,
+          "qty": 1
+        }
+      ],
+      "outputs": [
+        {
+          "name": "Gold bar",
+          "id": 2357,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "name": "Iron bars (Blast Furnace)",
+      "actionsPerHour": 4000,
+      "experiencePerAction": 12.5,
+      "requirements": {
+        "Smithing": 60
+      },
+      "inputs": [
+        {
+          "name": "Iron ore",
+          "id": 440,
+          "qty": 1
+        }
+      ],
+      "outputs": [
+        {
+          "name": "Iron bar",
+          "id": 2351,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "name": "Mithril bars (Blast Furnace)",
+      "actionsPerHour": 2300,
+      "experiencePerAction": 30.0,
+      "requirements": {
+        "Smithing": 60
+      },
+      "inputs": [
+        {
+          "name": "Mithril ore",
+          "id": 447,
+          "qty": 1
+        },
+        {
+          "name": "Coal",
+          "id": 453,
+          "qty": 2
+        }
+      ],
+      "outputs": [
+        {
+          "name": "Mithril bar",
+          "id": 2359,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "name": "Rune bars (Blast Furnace)",
+      "actionsPerHour": 1700,
+      "experiencePerAction": 50.0,
+      "requirements": {
+        "Smithing": 85
+      },
+      "inputs": [
+        {
+          "name": "Runite ore",
+          "id": 451,
+          "qty": 1
+        },
+        {
+          "name": "Coal",
+          "id": 453,
+          "qty": 4
+        }
+      ],
+      "outputs": [
+        {
+          "name": "Runite bar",
+          "id": 2363,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "name": "Steel bars (Blast Furnace)",
+      "actionsPerHour": 3200,
+      "experiencePerAction": 17.5,
+      "requirements": {
+        "Smithing": 60
+      },
+      "inputs": [
+        {
+          "name": "Iron ore",
+          "id": 440,
+          "qty": 1
+        },
+        {
+          "name": "Coal",
+          "id": 453,
+          "qty": 1
+        }
+      ],
+      "outputs": [
+        {
+          "name": "Steel bar",
+          "id": 2353,
+          "qty": 1
         }
       ]
     }
